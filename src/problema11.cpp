@@ -27,25 +27,29 @@ void gerarProcessosEArquivos(int& qntProcesso, int& qntArquivos) {
     std::cout << "\nProcessos gerados com sucesso!" << std::endl;
 }
 
-int gerarArquivos(std::string nomeArquivo) {
-    std::ofstream arquivo(nomeArquivo);
-    if (!arquivo.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo " << nomeArquivo << std::endl;
-        return 1;
+void gerarArquivos(std::string nomeArquivo) {
+   std::ofstream arquivo(nomeArquivo, std::ios::out | std::ios::binary);
+    if (!arquivo) {
+        std::cerr << "Erro ao abrir o arquivo para escrita!" << std::endl;
+        return;
     }
-    for (int i = 0; i < 100000; i++) {
-        int n = (rand() % 1000000) + 1;
-        arquivo << n << std::endl;
+
+    std::random_device rd; 
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(1.0, 1000000.0);
+
+    for (int i = 0; i < 100000; ++i) {
+        float num = static_cast<float>(dis(gen));
+        arquivo.write(reinterpret_cast<const char*>(&num), sizeof(num));
     }
     arquivo.close();
-    return 0;
 }
 
-int gerarProcessos(std::string nomeProcesso, int qntArquivos, int qntLinhas, int qntDeArquivosPorLinha) {
+void gerarProcessos(std::string nomeProcesso, int qntArquivos, int qntLinhas, int qntDeArquivosPorLinha) {
     std::ofstream processo(nomeProcesso);
     if (!processo.is_open()) {
         std::cerr << "Erro ao abrir o processo " << nomeProcesso << std::endl;
-        return 1;
+        return;
     }
     int qntLinhas1 = (rand() % qntLinhas) + 1;
     for (int i = 0; i < qntLinhas1; i++) {
@@ -58,7 +62,6 @@ int gerarProcessos(std::string nomeProcesso, int qntArquivos, int qntLinhas, int
         processo << " >" << std::endl;
     }
     processo.close();
-    return 0;
 }
 
 void proposta1(int qntConjuntosProcessos) {
@@ -238,10 +241,6 @@ void proposta5(int qntConjuntosProcessos, int qntArquivos) {
     limparArquivo("./datasets/output.txt");
     std::vector<std::vector<double>> cacheArquivos;
 
-    for(int i = 0; i < qntArquivos; i++) {
-        cacheArquivos.push_back({-1, -1});
-    }
-
     for (int i = 0; i < qntConjuntosProcessos; i++) {
         std::string nomeProcesso = "./datasets/processos/P" + std::to_string(i + 1) + ".txt"; 
         std::ifstream processo(nomeProcesso);
@@ -264,7 +263,7 @@ void proposta5(int qntConjuntosProcessos, int qntArquivos) {
 
                 if (somaPorCadaArquivo == -1) { 
                     somaPorCadaArquivo = calculandoASomaDasRaizQuadradaDeUmArquivo("./datasets/arquivos/" + std::to_string(idArquivo) + ".txt");
-                    cacheArquivos[idArquivo - 1] = {static_cast<double>(idArquivo), somaPorCadaArquivo};
+                    colocarCacheOrdenado(cacheArquivos, idArquivo, somaPorCadaArquivo);
                 }
                 
                 resultadoPorLinhaDeCadaProcesso += somaPorCadaArquivo;
@@ -329,42 +328,48 @@ void extrairArquivosPorLinha(std::string linha, std::vector<int>& arquivosPorLin
     }
 }
 
-void medindoTempoDeExecucaoDeCadaProposta(int qntConjuntosProcessos, int qntArquivos) {
+void medindoTempoDeExecucaoDeCadaProposta(int qntConjuntosProcessos, int qntArquivos, std::ofstream& csvFile) {
     auto inicio1 = std::chrono::high_resolution_clock::now();
     proposta1(qntConjuntosProcessos);
     auto fim1 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> tempoProposta1 = fim1 - inicio1;
     std::cout << tempoProposta1.count() << " | ";
+    csvFile << tempoProposta1.count() << ",";
 
     auto inicio2 = std::chrono::high_resolution_clock::now();
     proposta2(qntConjuntosProcessos);
     auto fim2 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> tempoProposta2 = fim2 - inicio2;
     std::cout << tempoProposta2.count() << " | ";
+    csvFile << tempoProposta2.count() << ",";
 
     auto inicio3 = std::chrono::high_resolution_clock::now();
     proposta3(qntConjuntosProcessos);
     auto fim3 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> tempoProposta3 = fim3 - inicio3;
     std::cout << tempoProposta3.count() << " | ";
+    csvFile << tempoProposta3.count() << ",";
 
     auto inicio4 = std::chrono::high_resolution_clock::now();
     proposta4(qntConjuntosProcessos);
     auto fim4 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> tempoProposta4 = fim4 - inicio4;
     std::cout << tempoProposta4.count() << " | ";
+    csvFile << tempoProposta4.count() << ",";
 
     auto inicio5 = std::chrono::high_resolution_clock::now();
     proposta5(qntConjuntosProcessos, qntArquivos);
     auto fim5 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> tempoProposta5 = fim5 - inicio5;
     std::cout << tempoProposta5.count() << " | ";
+    csvFile << tempoProposta5.count() << ",";
 
     auto inicio6 = std::chrono::high_resolution_clock::now();
     proposta6(qntConjuntosProcessos, qntArquivos);
     auto fim6 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> tempoProposta6 = fim6 - inicio6;
     std::cout << tempoProposta6.count();
+    csvFile << tempoProposta6.count() << "\n";
 }
 
 void limparArquivo(std::string nomeArquivo) {
@@ -377,16 +382,18 @@ void limparArquivo(std::string nomeArquivo) {
 }
 
 double calculandoASomaDasRaizQuadradaDeUmArquivo(std::string nomeArquivo) {
-    std::ifstream arquivo(nomeArquivo);
-    double soma = 0;
+    std::ifstream arquivo(nomeArquivo, std::ios::in | std::ios::binary);
     if (!arquivo.is_open()) {
         std::cerr << "Erro ao abrir o arquivo " << nomeArquivo << std::endl;
         return 0;
     }
-    std::string linha;
-    while (std::getline(arquivo, linha)) {
-        soma += sqrt(std::stod(linha));
+
+    double soma = 0.0;
+    float num;
+    while (arquivo.read(reinterpret_cast<char*>(&num), sizeof(num))) {
+        soma += std::sqrt(num);
     }
+
     arquivo.close();
    return soma;
 }
@@ -409,11 +416,11 @@ void trocar(std::vector<std::vector<int>>& matriz, int i, int j) {
 }
 
 int particao(std::vector<std::vector<int>>& matriz, int low, int high) {
-    int pivo = matriz[high].size(); // Escolhe o último elemento como pivô
+    int pivo = matriz[high].size(); 
     int i = low - 1;
 
     for (int j = low; j < high; j++) {
-        if (matriz[j].size() >= pivo) { // Para ordenação decrescente
+        if (matriz[j].size() >= pivo) { 
             i++;
             trocar(matriz, i, j);
         }
@@ -450,4 +457,19 @@ double buscarNoCache(int idArquivo, std::vector<std::vector<double>>& cacheArqui
     }
 
     return -1;
+}
+
+void colocarCacheOrdenado(std::vector<std::vector<double>>& cacheArquivos, int idArquivo, double somaPorCadaArquivo) {
+    int i = 0;
+    while (i < cacheArquivos.size() && cacheArquivos[i][0] < static_cast<double>(idArquivo)) {
+        i++;
+    }
+    cacheArquivos.insert(cacheArquivos.begin() + i, {static_cast<double>(idArquivo), somaPorCadaArquivo});
+}
+
+void limparPastas() {
+    std::filesystem::remove_all("./datasets/arquivos");
+    std::filesystem::remove_all("./datasets/processos");
+    std::filesystem::create_directory("./datasets/arquivos");
+    std::filesystem::create_directory("./datasets/processos");
 }

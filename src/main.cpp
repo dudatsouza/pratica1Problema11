@@ -27,10 +27,10 @@ void apresentacao() {
     std::cout << bold_on << "- PROPOSTA 2: " << bold_off << "Nessa proposta, o programa processa cada linha de um processo e reaproveita "
         "a operação de cálculo quando o número do arquivo for o mesmo, ou seja, se um arquivo já foi processado, a soma das raizes quadradas "
         "é guardada e utilizada apenas esse resultados, sem a necessidade de calcular tudo denovo.\n" << std::endl;
-    std::cout << bold_on << "- PROPOSTA 3: " << bold_off << "Nessa proposta, é bem parecida com a segunda proposta, porém, o que muda é a forma "
-        "de encontrar o valor já calculada no vetor que está armazenado, fazendo com que seja um pouco mais rápido o retorno. Na proposta 2, "
-        "era calculada e armazenada a soma das raizes de cada arquivo por cada processo, ou seja qnd mudava de processo aqueles resultados armazenados "
-        "eram descartados. Aqui nesta proposta, as somas de cada arquivo é armazenada e mantida mesmo na troca de um processo para outro.\n" << std::endl;
+    std::cout << bold_on << "- PROPOSTA 3: " << bold_off << "Nessa proposta, é bem parecida com a segunda proposta, porém, o que muda é que aqui "
+        "é utilizado uma espécie de cache goblal para todos os processos. Na proposta 2, era calculada e armazenada a soma das raizes de cada arquivo "
+        "por cada processo, ou seja qnd mudava de processo aqueles resultados armazenados eram descartados. Aqui nesta proposta, as somas de cada "
+        "arquivo é armazenada e mantida mesmo na troca de um processo para outro.\n" << std::endl;
     std::cout << bold_on << "- PROPOSTA 4: " << bold_off << "Nessa proposta, utilizando a ideia da proposta 3, e buscando com que o tempo de execução "
         "seja ainda menor, foi implementado um algoritmo de ordenação quicksort para ordenar cada processo de acordo com a quantidade de arquivos por linha, "
         "fazendo com que a linha com mais arquivos seja processada primeiro, para que o reaproveitamento de cálculos seja mais eficiente.\n" << std::endl;
@@ -92,25 +92,47 @@ void analiseDeResultados() {
 
 int main() {  
     apresentacao();  
+    
     std::cout << bold_on << "EXECUÇÃO DO PROGRAMA\n" << bold_off << std::endl;
     int qntProcesso; 
     int qntArquivos;
     gerarProcessosEArquivos(qntProcesso, qntArquivos);
     std::vector<int> qntConjuntosProcessos = preparandoConjuntos(qntProcesso);    
     limparconsole();
+
     std::cout << "--------------------------------------------" << std::endl;
     std::cout << "INICIANDO A MEDIÇÃO DO TEMPO DE EXECUÇÃO DAS PROPOSTAS\n" << std::endl;
     std::cout << "Qnt | prop 1 |  prop 2 |  prop 3 | prop 4 | prop 5 | prop 6" << std::endl;
+
+
+    std::ofstream csvFile("./datasets/tempos_execucao.csv");
+    csvFile << "QuantidadeConjuntos,Proposta1,Proposta2,Proposta3,Proposta4,Proposta5,Proposta6\n";
+
     for (int qnt : qntConjuntosProcessos) {
         std::cout << qnt << " | ";
-        medindoTempoDeExecucaoDeCadaProposta(qnt, qntArquivos);
+        csvFile << qnt << ",";
+        medindoTempoDeExecucaoDeCadaProposta(qnt, qntArquivos, csvFile);
         std::cout << std::endl;
     } 
+
+    csvFile.close();
+
+    std::string command = "python3 src/gerarGrafico.py";
+    int result = system(command.c_str());
+    if (result == 0) {
+        std::cout << "Script Python executado com sucesso." << std::endl;
+    } else {
+        std::cerr << "Falha na execução do script Python." << std::endl;
+    }
+
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // limpa o buffer de entrada
+
     std::cout << "--------------------------------------------" << std::endl;
     std::cout << "FIM DA MEDIÇÃO DO TEMPO DE EXECUÇÃO DAS PROPOSTAS\n" << std::endl;
-    std::cout << "Dê ENTER para continuar...";
-    std::cin.get();
+    std::cout << "Dê ENTER para continuar..." << std::endl;
+    limparPastas();
     std::cin.get();
     analiseDeResultados();
+
     return 0;
 }
