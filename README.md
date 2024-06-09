@@ -48,13 +48,13 @@ Para resolver o problema de forma eficiente, foram implementadas seis propostas 
 
 - *Proposta 2:* Nessa proposta, o programa processa cada linha de um processo e reaproveita a operação de cálculo quando o número do arquivo for o mesmo, ou seja, se um arquivo já foi processado, a soma das raízes quadradas é guardada e utilizada apenas esse resultado, sem a necessidade de calcular tudo de novo, isso para cada processo.
 
-- *Proposta 3:* Nessa proposta, semelhante à segunda, o que muda é que aqui é utilizado uma espécie de cache goblal para todos os processos. Na proposta 2, era calculada e armazenada a soma das raizes de cada arquivo por cada processo, ou seja qnd mudava de processo aqueles resultados armazenados eram descartados. Aqui nesta proposta, as somas de cada arquivo é armazenada e mantida mesmo na troca de um processo para outro.
+- *Proposta 3:* Nessa proposta, semelhante à segunda, o que muda é que aqui é utilizado uma espécie de cache goblal para todos os processos. Na proposta 2, era calculada e armazenada a soma das raizes de cada arquivo por cada processo, ou seja quando mudava de processo aqueles resultados armazenados eram descartados. Aqui nesta proposta, as somas de cada arquivo é armazenada e mantida mesmo na troca de um processo para outro.
 
 - *Proposta 4:* Nessa proposta, utilizando a ideia da proposta 3, e buscando com que o tempo de execução seja ainda menor, foi implementado um algoritmo de ordenação quicksort para ordenar cada processo de acordo com a quantidade de arquivos por linha, fazendo com que a linha com mais arquivos seja processada primeiro, para que o reaproveitamento de cálculos seja mais eficiente.
 
 - *Proposta 5:* Nessa proposta, semelhante à proposta 3, foi implementado um cache de arquivos, onde o programa armazena os resultados de cada arquivo em um vetor de cache, fazendo com que o reaproveitamento de cálculos seja mais eficiente. A diferença desta proposta para a proposta 3 é que aqui, o programa armazena os resultados de cada arquivo em um vetor de cache em ordem crescente, e quando um arquivo é processado, o programa busca no vetor de cache o resultado daquele arquivo usando busca binária. Se o arquivo não estiver no cache, o programa calcula a soma das raízes quadradas e armazena no cache.
 
-- *Proposta 6:* Nessa proposta, semelhante à proposta 5, é calculada a soma das raízes quadradas de todos os arquivos antes de olhar para os processos e armazenada em um vetor de cache. Quando um arquivo é processado, o programa busca no vetor de cache o resultado daquele arquivo usando busca binária. Se o arquivo não estiver no cache, o programa calcula a soma das raízes quadradas e armazena no cache.
+- *Proposta 6:* Nessa proposta, semelhante à proposta 5, é calculada a soma das raízes quadradas de todos os arquivos antes de olhar para os processos e armazenada em um vetor de cache. Quando um arquivo é processado, o programa pega no vetor de cache o resultado daquele arquivo sem a necessidade de fazer uma busca. Se o arquivo não estiver no cache, o programa calcula a soma das raízes quadradas e armazena no cache.
 
 ### 🎯 Objetivo
 
@@ -149,7 +149,7 @@ O desenvolvimento dessas propostas permitiu explorar diversas técnicas de otimi
     ```cpp
     extrairArquivosPorLinha(linha, arquivosPorLinha);
     ```
-    - Se cada linha do arquivo de processo contém em média *M* IDs de arquivos, essa operação é *O(M)*.
+    - Se cada linha do arquivo de processo contém em média *A* IDs de arquivos, essa operação é *O(A)*.
 
 6. **Loop sobre IDs de Arquivos:**
     ```cpp
@@ -159,7 +159,7 @@ O desenvolvimento dessas propostas permitiu explorar diversas técnicas de otimi
     }
     ```
     - Cada chamada à função `calculandoASomaDasRaizQuadradaDeUmArquivo` envolve a leitura de um arquivo e o cálculo da soma das raízes quadradas de seus elementos. Se cada arquivo tiver em média *N* elementos, a complexidade dessa função é *O(N)*.
-    - Portanto, o loop sobre os IDs de arquivos tem complexidade *O(M * N)* por linha.
+    - Portanto, o loop sobre os IDs de arquivos tem complexidade *O(A * N)* por linha.
 
 7. **Escrever o Resultado no Arquivo de Saída:**
     ```cpp
@@ -172,20 +172,20 @@ O desenvolvimento dessas propostas permitiu explorar diversas técnicas de otimi
 Sabendo que:
 - **Q**: Número de conjuntos de processos.
 - **L**: Número médio de linhas por arquivo de processo.
-- **M**: Número médio de IDs de arquivos por linha.
+- **A**: Número médio de IDs de arquivos por linha.
 - **N**: Número médio de elementos por arquivo referenciado.
 
 Para cada conjunto de processos:
 - Abrir o arquivo de processo: *O(1)*
 - Iterar sobre *L* linhas: *O(L)*
-    - Extrair IDs de arquivos por linha: *O(M)*
-    - Iterar sobre *M* IDs de arquivos: *O(M * N)*
+    - Extrair IDs de arquivos por linha: *O(A)*
+    - Iterar sobre *A* IDs de arquivos: *O(A * N)*
 
 Portanto, a complexidade para processar um conjunto de processos é:
-**O(L * (M + M * N)) = O(L * M * (1 + N)) ≈ O(L * M * N)**.
+**O(L * (A + A * N)) = O(L * A * (1 + N)) ≈ O(L * A * N)**.
 
 Como isso é feito para *Q* conjuntos de processos, assim, a complexidade computacional de tempo da Proposta 1 é:
-**O(Q * L * M * N)**.
+**O(Q * L * A * N)**.
 
 
 ### Análise de Complexidade da Proposta 2:
@@ -711,10 +711,10 @@ Esta estrutura de diretórios facilita a organização do projeto e a localizaç
 
 5. Siga as instruções do programa, gerando os arquivos e os processos que estarão localizados em suas respectivas pastas, `./datasets/arquivos/` e `./datasets/processos/`, e a soma das raízes quadradas em `./datasets/output.txt`.
 
-6. 
-
+6. Depois você irá ser redirecionado para uma janela do navegador com o gráfico dos tempos de execução, onde poderá visualizar o desempenho de cada proposta da maneira que desejar, tendo uma noção melhor da eficiência de cada uma. 
 
 ## 📋 Exemplos
+
 
 ### 📄 Arquivos de entradas:
 Os arquivos de entradas vc pode está pegando de exemplos os que estão disponíveis na pasta `/datasets`. Lá você vai encontrar os arquivos: 
@@ -796,7 +796,7 @@ Após a implementação da Proposta 6, a análise dos tempos de execução e da 
 
 4. **Simplicidade e Mantenabilidade:** A Proposta 6, apesar de exigir um tempo de pré-processamento significativo, simplifica consideravelmente o código subsequente, tornando-o mais fácil de manter e menos propenso a erros. O design claro e eficiente facilita futuras modificações ou expansões do sistema.
 
-Portanto, a escolha da Proposta 6 como a solução final foi baseada em uma análise detalhada de eficiência, complexidade, custo-benefício e simplicidade de manutenção. Esta proposta atende plenamente aos requisitos do problema, fornecendo um equilíbrio ideal entre desempenho e praticidade.
+Portanto, a escolha da Proposta 6 como a solução final foi baseada em uma análise detalhada de eficiência, complexidade, custo-benefício e simplicidade de manutenção. Esta proposta atende plenamente aos requisitos do problema, fornecendo um equilíbrio ideal entre desempenho e praticidade quando a maioria dos arquivos são acessados, mas pode desperdiçar cálculos quando muitos arquivos não são usados. Mas também sabemos que para muitos casos práticos, Proposta 3 ou Proposta 5 são geralmente as melhores opções devido ao uso eficiente do cache. 
 
 ## 🎉 Conclusão 
 

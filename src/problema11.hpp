@@ -40,9 +40,11 @@ double buscarNoCache(int idArquivo, std::vector<std::vector<double>>& cacheArqui
 void colocarCacheOrdenado(std::vector<std::vector<double>>& cacheArquivos, int idArquivo, double valor);
 
 void limparPastas();
+void limparArquivosDeSaida();
 
 void limparconsole();
 void apresentacao();
 std::vector<int> preparandoConjuntos(int qntProcesso);
+void gerandoGrafico();
 void analiseDeResultados();
 #endif 

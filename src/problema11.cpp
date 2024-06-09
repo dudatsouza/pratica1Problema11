@@ -473,3 +473,10 @@ void limparPastas() {
     std::filesystem::create_directory("./datasets/arquivos");
     std::filesystem::create_directory("./datasets/processos");
 }
+
+void limparArquivosDeSaia() {
+    std::filesystem::remove("./datasets/output.txt");
+    std::filesystem::remove("./datasets/tempos_execucao.csv");
+    std::filesystem::create_directory("./datasets/output.txt");
+    std::filesystem::create_directory("./datasets/tempos_execucao.csv");
+}
