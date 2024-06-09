@@ -2,7 +2,7 @@
 
 void gerarProcessosEArquivos(int& qntProcesso, int& qntArquivos) {
     std::cout << "--------------------------------------------\nGERAÇÃO DE ARQUIVOS" << std::endl;
-    std::cout << "Digite a quantidade de arquivos que deseja gerar: ";
+    std::cout << "\nDigite a quantidade de arquivos que deseja gerar: ";
     std::cin >> qntArquivos;
     for (int i = 0; i < qntArquivos; i++) {
         std::string nomeArquivo = "./datasets/arquivos/" + std::to_string(i + 1) + ".txt";
@@ -12,7 +12,7 @@ void gerarProcessosEArquivos(int& qntProcesso, int& qntArquivos) {
     std::cout << "Arquivos gerados com sucesso!\n" << std::endl;
 
     std::cout << "--------------------------------------------\nGERAÇÃO DE PROCESSOS" << std::endl;
-    std::cout << "Digite a quantidade de processos que deseja gerar: ";
+    std::cout << "\nDigite a quantidade de processos que deseja gerar: ";
     std::cin >> qntProcesso;
     std::cout << "Digite a quantidade de linhas que deseja gerar para cada processo: ";
     int qntLinhas;
@@ -472,11 +472,4 @@ void limparPastas() {
     std::filesystem::remove_all("./datasets/processos");
     std::filesystem::create_directory("./datasets/arquivos");
     std::filesystem::create_directory("./datasets/processos");
-}
-
-void limparArquivosDeSaia() {
-    std::filesystem::remove("./datasets/output.txt");
-    std::filesystem::remove("./datasets/tempos_execucao.csv");
-    std::filesystem::create_directory("./datasets/output.txt");
-    std::filesystem::create_directory("./datasets/tempos_execucao.csv");
 }

@@ -1,5 +1,16 @@
 # 🗃️ Prática 1 - Problema 11
 
+<!-- -arrumar topicos no sumario
+     -fazer seção de implementação  
+     -fazer mudanças nas analise de complexidade proposta 1 (M -> A)
+     -fazer seção de exemplos 
+     -fazer seção do grafico em python
+     -fazer seção das analises de resultados 
+     -fazer seção de conclusão 
+-->
+
+
+
 <div align="center">
    <img align="center" height="20px" width="80px" src="https://img.shields.io/badge/Ubuntu-orange?logo=ubuntu">
    <img align="center" height="20px" width="80px" src="https://img.shields.io/badge/VS%20Code-blue?logo=visual%20studio%20code"/>
@@ -31,7 +42,7 @@
 Este problema foi apresentado através de uma atividade, Prática 1, do professor Michel Pires na disciplina de Algoritmos e Estruturas de Dados I. A atividades Prática 1 é composta por problemas sobre Análise Assintótica e Complexidade Computacional. O chamado Problema 11, consiste inicialmente em fazer o cálculo das somas das raízes quadradas dos números contidos em arquivos referenciados por arquivos de processo. A ideia do professor é fazer com que seus alunos sejam incentivados a explorar as oportunidades de avaliação e melhoria, discutindo essas melhorias e seus possíveis custos operacionais. 
 
 
-### 📋 - **Descrição **do Problema
+### 📋 Descrição do Problema
 Temos dois tipos principais de arquivos:
 1. **Arquivos de Processos (`P1.txt`, `P2.txt`, ..., `PQ.txt`):** Cada um desses arquivos contém linhas que listam IDs de outros arquivos de dados. Cada linha representa um conjunto de arquivos a serem processados juntos *(< L1, 04, 07, 01, 01, 07, 06, . . . , 03 >)*. 
 2. **Arquivos Referenciados (`A1.txt`, `A2.txt`, ..., `AN.txt`):** Estes arquivos contêm contém 100.000 números de ponto flutuante aleatórios, variando de 1 a 1.000.000 dos quais precisamos calcular a soma das raízes quadradas.
