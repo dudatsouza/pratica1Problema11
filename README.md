@@ -1,15 +1,9 @@
 # 🗃️ Prática 1 - Problema 11
 
-<!-- -arrumar topicos no sumario
-     -fazer seção de implementação  
-     -fazer mudanças nas analise de complexidade proposta 1 (M -> A)
-     -fazer seção de exemplos 
-     -fazer seção do grafico em python
+<!-- -fazer seção do grafico em python
      -fazer seção das analises de resultados 
      -fazer seção de conclusão 
 -->
-
-
 
 <div align="center">
    <img align="center" height="20px" width="80px" src="https://img.shields.io/badge/Ubuntu-orange?logo=ubuntu">
@@ -115,8 +109,7 @@ Essa abordagem de cache mostrou-se altamente eficaz, reduzindo ainda mais o temp
 ### 📌 Proposta 6
 A sexta e última proposta combinou as melhorias anteriores com um cache global:
 1. Calcular a soma das raízes quadradas de todos os arquivos e armazenar em um vetor de cache.
-2. Utilizar busca binária para encontrar os resultados no cache ao processar cada linha.
-3. Se o arquivo não estiver no cache, calcular a soma e armazenar o resultado.
+2. Aqui não há a necessidade de fazer algumas busca, ou calcular caso não tenha as somas no cache que todas já foram calculadas, e ele apenas pega o valor em um lugar da memória já pré-destinado.
 
 Com essa última proposta, conseguimos alcançar um alto nível de eficiência e desempenho no processamento dos arquivos, atendendo aos requisitos do problema de forma otimizada e escalável.
 
@@ -125,9 +118,192 @@ O desenvolvimento dessas propostas permitiu explorar diversas técnicas de otimi
 
 ## 📝 Implementação
 
+Nesta seção, serão detalhadas as principais partes do código-fonte, incluindo a organização dos arquivos e as funções implementadas em cada um deles. Serão abordados os seguintes arquivos:
+
+- `problema11.hpp`
+- `problema11.cpp`
+- `main.cpp`
+- `gerarGrafico.py`
+
+### Arquivo `problema11.hpp`
+
+Arquivos com extensão `.hpp` são comumente usados em C++ para declarar classes, funções e variáveis que podem ser compartilhadas entre diferentes arquivos de código-fonte. No caso deste projeto, o arquivo `problema11.hpp` contém as declarações das funções principais utilizadas no programa.
+
+#### Includes
+Aqui, são incluídas diversas bibliotecas que fornecem funcionalidades essenciais para o programa:
+
+    - `iostream`: Essa biblioteca é utilizada para entrada e saída padrão, permitindo a interação do usuário com o programa por meio do terminal.
+    - `fstream`: Fornece classes e funções para trabalhar com arquivos, possibilitando a leitura e escrita de dados em arquivos do sistema.
+    - `ostream`: Fornece classes e funções relacionadas à saída de dados, permitindo a escrita de dados em fluxos de saída.
+    - `string`: Oferece suporte para manipulação de strings, permitindo a criação, manipulação e processamento de strings de caracteres.
+    - `ctime`: Esta biblioteca fornece funções para manipulação de tempo e data, como obter a hora atual e converter tempo em representações de cadeia de caracteres.
+    - `vector`: Fornece uma implementação de vetor dinâmico em C++, permitindo a criação de arrays dinâmicos que podem crescer e diminuir de tamanho conforme necessário.
+    - `chrono`: Oferece suporte para medição de tempo de forma precisa, permitindo medir a duração de operações ou intervalos de tempo.
+    - `algorithm`: Esta biblioteca fornece uma variedade de funções para operações em sequências de elementos, como ordenação, busca e manipulação de elementos.
+    - `cmath`: Oferece funções matemáticas comuns, como operações aritméticas, funções trigonométricas e funções exponenciais.
+    - `map`: Fornecendo um mapeamento associativo entre chaves e valores, a biblioteca `map` permite armazenar pares chave-valor e acessar os valores associados às chaves de forma eficiente.
+    - `random`: Fornece funções e classes para geração de números pseudoaleatórios, úteis em simulações e algoritmos que requerem aleatoriedade controlada.
+    - `cstdlib`: Fornece suporte para funções de propósito geral em C, incluindo alocação de memória dinâmica, conversão de tipos e manipulação de strings.
+    - `filesystem`: Introduzido no C++17, esta biblioteca oferece suporte para operações de sistema de arquivos, como manipulação de caminhos de arquivo e iteração de diretórios.
+
+#### Declaração das funções
+Aqui são declaradas as funções que serão utilizadas no programa. As funções são declaradas sem detalhes sobre suas implementações, pois serão discutidas em detalhes posteriormente em seus respectivos arquivos.
+
+
+### Arquivo `problema11.cpp`
+
+Este arquivo contém as implementações das funções declaradas em `problema11.hpp`.
+
+#### Funções de Geração de Processos e Arquivos
+
+- `gerarProcessosEArquivos`: Esta função gera processos e arquivos com base nos parâmetros fornecidos.
+- `gerarArquivos`: Gera arquivos com o nome especificado.
+- `gerarProcessos`: Gera processos com o nome especificado e os vincula a arquivos existentes.
+
+#### Funções de Proposta
+
+- `proposta1`, `proposta2`, `proposta3`, `proposta4`, `proposta5`, `proposta6`: Implementações das diferentes propostas de solução para o problema. Cada uma dessas funções lida com uma abordagem específica para processar conjuntos de dados.
+
+#### Outras Funções
+
+- `extrairArquivosPorLinha`: Extrai números de arquivo de uma linha de texto.
+- `medindoTempoDeExecucaoDeCadaProposta`: Mede o tempo de execução de cada proposta.
+- `limparArquivo`: Limpa o conteúdo de um arquivo.
+- `calculandoASomaDasRaizQuadradaDeUmArquivo`: Calcula a soma das raízes quadradas dos números em um arquivo.
+- `escreverResultadoNoArquivoDeSaida`: Escreve o resultado em um arquivo de saída.
+
+#### Funções de Ordenação
+
+- `trocar`, `particao`, `quickSort`: Implementação do algoritmo QuickSort para ordenação de matrizes.
+
+#### Funções de Cache
+
+- `buscarNoCache`, `colocarCacheOrdenado`: Gerencia um cache de arquivos para otimização de acesso.
+
+#### Funções de Limpeza
+
+- `limparPastas`: Limpa pastas usadas durante a execução.
+
+
+#### Arquivo `main.cpp`
+
+O arquivo `main.cpp` é o ponto de entrada principal do programa. Abaixo estão as principais funções e seu propósito:
+
+- `void limparconsole()`: Esta função limpa a tela do console para uma melhor apresentação das informações.
+
+- `void apresentacao()`: Esta função apresenta uma introdução ao usuário sobre o propósito do programa e as diferentes propostas de processamento de conjuntos de processos implementadas.
+
+- `std::vector<int> preparandoConjuntos(int qntProcesso)`: Esta função solicita ao usuário a quantidade de conjuntos de processos que deseja medir o tempo de execução e retorna um vetor com a quantidade de processos em cada conjunto.
+
+- `void gerenciandoMedicao(std::vector<int> qntConjuntosProcessos, int qntArquivos)`: Esta função coordena a medição do tempo de execução de cada proposta de solução para diferentes quantidades de conjuntos de processos e arquivos, escrevendo os resultados em um arquivo CSV.
+
+- `void gerandoGrafico()`: Esta função gera um gráfico do desempenho das propostas de solução utilizando os dados contidos no arquivo CSV gerado durante a medição do tempo de execução.
+
+- `void analiseDeResultados()`: Esta função realiza uma análise dos resultados obtidos após a medição do tempo de execução das propostas de solução, apresentando as principais conclusões.
+
+- `void finalizando()`: Esta função é chamada no final da execução do programa e apresenta uma mensagem de encerramento.
+
+- `int main()`: Esta é a função principal que inicia a execução do programa. Ela chama outras funções para realizar tarefas específicas, como apresentar uma introdução, gerar processos e arquivos, medir o tempo de execução das propostas de solução, gerar gráficos e realizar análises de resultados.
+
+#### Arquivo `gerarGrafico.py`
+
+O arquivo `gerarGrafico.py` é um script Python responsável por gerar um gráfico do desempenho das diferentes propostas de solução implementadas no programa. O script tem como objetivo visualizar de forma gráfica o desempenho das diferentes propostas de solução em relação ao tempo de execução. O script lê os dados contidos no arquivo CSV gerado pelo programa principal, que contém informações sobre o tempo de execução de cada proposta para diferentes quantidades de conjuntos de processos. 
+
+O script gerarGrafico.py utiliza as bibliotecas pandas e plotly.graph_objects para criar um gráfico de linhas que representa o desempenho das propostas implementadas. Abaixo está o código do script com explicações linha por linha:
+
+- Essas linhas importam as bibliotecas necessárias para o script: 
+    ```python
+    import pandas as pd
+    import plotly.graph_objects as go
+    ```
+
+- Aqui carrega os dados do arquivo CSV `tempos_execucao.csv` em um DataFrame do pandas.
+    ```python
+    df = pd.read_csv('./datasets/tempos_execucao.csv')
+    ```
+- Depois cria um novo objeto de figura para representar o gráfico.
+    ```python
+    fig = go.Figure()
+    ```
+
+- Este bloco de código itera sobre as colunas do DataFrame, adicionando uma linha ao gráfico para cada coluna.
+    ```python
+    for col in df.columns[1:]:
+    fig.add_trace(go.Scatter(
+        x=df['QuantidadeConjuntos'], 
+        y=df[col], 
+        mode='lines+markers', 
+        name=col,
+        marker=dict(size=10) 
+    ))
+    ```
+- Nesta seção, são definidos o título do gráfico e os nomes dos eixos x e y. Além disso, são definidos o estilo do texto, as cores de fundo do papel e do gráfico, e o estilo da legenda.
+    ```python=
+    fig.update_layout(
+        title={
+            'text': 'DESEMPENHO DAS PROPOSTAS',
+            'x': 0.5,
+            'xanchor': 'center',
+            'yanchor': 'top',
+            'font': {'family': 'Courier New', 'size': 40, 'color': 'white'}
+        },
+        xaxis_title='Quantidade de Conjuntos',
+        yaxis_title='Tempo de Execução',
+        font=dict(
+            family="sans-serif",
+            size=14,
+            color="#7f7f7f"
+        ),
+        paper_bgcolor="black",
+        plot_bgcolor="black",
+        legend=dict(
+            x=1,
+            y=1,
+            traceorder='normal',
+            font=dict(
+                family='sans-serif',
+                size=12,
+                color='white'
+            ),
+            bgcolor='black',
+            bordercolor='black',
+            borderwidth=1
+        ),
+        xaxis=dict(
+            gridcolor='rgba(255, 255, 255, 0.2)'  # Cor branca com 20% de opacidade
+        ),
+        yaxis=dict(
+            gridcolor='rgba(255, 255, 255, 0.2)'  # Cor branca com 20% de opacidade
+        )
+    )
+    ```
+
+- Este trecho adiciona uma anotação explicativa abaixo do título do gráfico.
+    ```python
+    fig.add_annotation(
+        text="Quantidade de Conjuntos x Tempo de Execução",
+        xref="paper", yref="paper",
+        x=0.5, y=1.02,  # Posiciona a legenda abaixo do título
+        showarrow=False,
+        font=dict(
+            family="Courier New",
+            size=18,
+            color="rgba(255, 255, 255)"  # Cor da legenda
+        ),
+        align="center"
+    )
+    ```
+
+- Finalmente, esta linha exibe o gráfico na tela, em uma janela do navegador.
+    ```python
+    fig.show()
+    ```
+
+
 
 
 ## Análise de Complexidade de Cada Proposta
+Nesta seção, abordaremos a análise detalhada da complexidade de cada proposta implementada para resolver o problema apresentado. Exploraremos cada abordagem, destacando suas vantagens e limitações em termos de eficiência computacional.
 
 ### Análise de Complexidade da Proposta 1:
 
@@ -668,6 +844,9 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
 - Complexidade: *O(Q * K + N * L * A)*
 - Desempenho: Pré-calcula e armazena todas as somas antes de processar, excelente se a memória não é um problema.
 
+
+Após compreendermos a complexidade de cada proposta, nas próximas seções, examinaremos exemplos práticos de sua implementação e analisaremos os resultados, visando chegar a uma conclusão embasada sobre a eficácia de cada abordagem.
+
 ## 📂 Estrutura de Diretórios
 
 O projeto é organizado da seguinte forma:
@@ -725,40 +904,185 @@ Esta estrutura de diretórios facilita a organização do projeto e a localizaç
 6. Depois você irá ser redirecionado para uma janela do navegador com o gráfico dos tempos de execução, onde poderá visualizar o desempenho de cada proposta da maneira que desejar, tendo uma noção melhor da eficiência de cada uma. 
 
 ## 📋 Exemplos
+Nesta seção, serão apresentados exemplos de execução do programa, demonstrando passo a passo como cada proposta de processamento de conjuntos de processos é aplicada e depois vamos analisar os resultados obtidos.
 
+### Apresentação do problema
+Assim que iniciamos o programa temos uma explicação do problema: 
 
-### 📄 Arquivos de entradas:
-Os arquivos de entradas vc pode está pegando de exemplos os que estão disponíveis na pasta `/datasets`. Lá você vai encontrar os arquivos: 
-- `resultados.csv`
-- `resultadosMedias.csv`
-- `resultadosMinMax.csv`
-- `resultadosMinMaxMedias.csv`
-
-
-### 📄 Exemplo de Saída de um dos Gráficos:
-1. **Primeiro tipo de plotagem:** 
-A partir do script `plotGaficoMedias.gp` são plotados 12 gráficos, cada um pegando a diferença entre o tempo de execução dos três MaxMin. Aqui está um exemplo de um dos gráficos gerados a partir dos dados do arquivo `resultadosMedias.csv`: 
 <p align="center">
     <figure align="center">
-    <img src="./images/imgs_readme/graficoExemploMedias.png" alt="Gráfico Exemplo" width="500" >
-    <figcaption>Fonte: Autor</figcaption>
+    <img src="./images/apresentacao.png" alt="Apresentação">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
     </figure>
 </p>
 
-**OBSERVAÇÃO:** Foram plotados um total de 12 gráficos, representando diferentes tamanhos de vetores e organizações, mostrando a variação do tempo de execução de acordo com o MinMax usado.
+### Gerando Arquivos e Processos
+Aqui começa a execução real do programa, onde ele pede as informações de quantos arquivos irá gerar, quantos processos, até quantas linhas terá cada processo, até quantos arquivos terá cada linha de cada processo e por último quantos conjuntos de processos será analisados e quais seus respectivos tamanhos. Veja: 
 
-2. **Segundo tipo de plotagem:** 
-A partir do script `plotGaficoMinMax.gp` são plotados 9 gráficos, cada um pegando a diferença entre o tempo de execução de acordo com o tamanho do vetor. Aqui está um exemplo de um dos gráficos gerados a partir dos dados do arquivo `resultadosMiinMaxMedias.csv`: 
 <p align="center">
     <figure align="center">
-    <img src="./images/imgs_readme/graficoExemploMinMax.png" alt="Gráfico Exemplo" width="500" >
-    <figcaption>Fonte: Autor</figcaption>
+    <img src="./images/gerandoArquivosProcessos.png" alt="Gerando Arquivos e Processos">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
     </figure>
 </p>
 
-**OBSERVAÇÃO:** Foram plotados um total de 9 gráficos, representando diferentes organizações e MinMaxs usados, mostrando a variação do tempo de execução de acordo com o tamanho do vetor.
+### Medição do Tempo de Execução das Propostas 
+Depois, já se inicia a contagem de tempo da execução de cada proposta com a quantidade de conjuntos de processos que vc selecionou. 
 
-## 📈 Resultados das Análises
+<p align="center">
+    <figure align="center">
+    <img src="./images/medicao.png" alt="Medição do Tempo de Execução das Propostas">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+### Arquivo `output.txt`
+No arquivo `output.txt`, é guardado os valores das subtração das somas das raízes quadradas de cada linha de cada processo. Veja um exemplo da saída desse arquivo:
+
+```txt
+    -599813054
+    -732694521
+    -998823930
+    -399758306
+    -66607134
+```
+
+### Arquivo `tempos_execução.csv`
+É guardado os tempos de execução no arquivo `tempos_execucao.cvs`, para que possa ser usado depois para fazer a plotagem do gráfico. 
+```csv
+    QuantidadeConjuntos,Proposta1,Proposta2,Proposta3,Proposta4,Proposta5,Proposta6
+    1,0.0408777,0.0160497,0.0158111,0.0157731,0.0150664,0.0182004
+    2,0.0757014,0.03363,0.0212867,0.0194401,0.0183645,0.0187717
+    3,0.132958,0.0528549,0.0189366,0.0187192,0.0185795,0.0186082
+    4,0.158181,0.0638018,0.0188046,0.0191754,0.0187822,0.0188674
+    5,0.156161,0.067196,0.018753,0.0184915,0.0192842,0.0194667
+```
+
+### Gerando Gráfico
+Depois de salvar os dados no arquvivo `tempos_execução.csv`, é feita a plotagem do gráfico em uma página do navegador. 
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/gerandoGrafico1.png" alt="Gerando Gráfico">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+No navegador irá aparecer o gráfico plotado para a análise: 
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/gerandoGrafico2.png" alt="Gerando Gráfico">
+    <figcaption>Fonte: Autor - Gráfico</figcaption>
+    </figure>
+</p>
+
+Na legenda onde mostra as linhas de cada proposta, tem como ocultar algumas linhas para a melhor visualização: 
+
+<table>
+    <tr>
+        <td>
+            <p align="center">
+                <figure align="center">
+                    <img src="./images/gerandoGrafico3.png" alt="Gerando Gráfico">
+                    <figcaption>Fonte: Autor - Gráfico</figcaption>
+                </figure>
+            </p>
+        </td>
+        <td>
+            <p align="center">
+                <figure align="center">
+                    <img src="./images/gerandoGrafico4.png" alt="Gerando Gráfico">
+                    <figcaption>Fonte: Autor - Gráfico</figcaption>
+                </figure>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>
+            <p align="center">
+                <figure align="center">
+                    <img src="./images/gerandoGrafico5.png" alt="Gerando Gráfico">
+                    <figcaption>Fonte: Autor - Gráfico</figcaption>
+                </figure>
+            </p>
+        </td>
+        <td>
+            <p align="center">
+                <figure align="center">
+                    <img src="./images/gerandoGrafico6.png" alt="Gerando Gráfico">
+                    <figcaption>Fonte: Autor - Gráfico</figcaption>
+                </figure>
+            </p>
+        </td>
+    </tr>
+</table>
+
+Depois que terminar de visualizar o gráfico, volte para o programa para continuar a sua execução
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/gerandoGrafico7.png" alt="Gerando Gráfico">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+### Análise de Resultados 
+Nesta parte é feito um pequeno estudo e explicação de cada proposta, apresentando como é esperado o desempenho de cada uma: 
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/analiseResultado1.png" alt="Análise de Resultados">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+Depois apresenta a complexidade, descrição, melhoria e limitação de cada proposta:
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/analiseResultado2.png" alt="Análise de Resultados">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+Logo após, é faldo mais um pouco sobre a eficiência de cada uma e o motivo de não buscar outras propostas.
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/analiseResultado3.png" alt="Análise de Resultados">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+E por fim tem a conclusão das análises: 
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/analiseResultado4.png" alt="Análise de Resultados">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+### Agradecimento e dados
+
+No final, é feito o agradecimento e mostra alguns dados:
+
+<p align="center">
+    <figure align="center">
+    <img src="./images/agradecimento.png" alt="Agradecimento">
+    <figcaption>Fonte: Autor - Execução do Programa</figcaption>
+    </figure>
+</p>
+
+
+## 📈 Análises, Testes e Estudos
+
+
+
 
 
 ## Escolha da melhor proposta 
