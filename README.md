@@ -1,5 +1,8 @@
 # 🗃️ Prática 1 - Problema 11
 
+<!-- -reler todo o README
+     -conferir os includes -->
+
 <div align="center">
    <img align="center" height="20px" width="80px" src="https://img.shields.io/badge/Ubuntu-orange?logo=ubuntu">
    <img align="center" height="20px" width="80px" src="https://img.shields.io/badge/VS%20Code-blue?logo=visual%20studio%20code"/>
@@ -18,7 +21,7 @@
                 <li><a href="#-objetivo">Objetivo</a></li>
             </ol>
         </li>
-        <li><a href="#-desenvolvimento">Desenvolvimento</a>
+        <li><a href="#%EF%B8%8F-desenvolvimento">Desenvolvimento</a>
             <ol>
                 <li><a href="#1%EF%B8%8F⃣-proposta-1">Proposta 1</a></li>
                 <li><a href="#2%EF%B8%8F⃣-proposta-2">Proposta 2</a></li>
@@ -40,6 +43,7 @@
                     <ul>
                         <li><a href="#-funções-de-geração-de-processos-e-arquivos">Funções de Geração de Processos e Arquivos</a></li>
                         <li><a href="#%EF%B8%8F-outras-funções">Outras Funções</a></li>
+                        <li><a href="#-funções-de-proposta">Funções de Proposta</a></li>
                         <li><a href="#-funções-de-ordenação">Funções de Ordenação</a></li>
                         <li><a href="#-funções-de-cache">Funções de Cache</a></li>
                         <li><a href="#%EF%B8%8F-funções-de-limpeza">Funções de Limpeza</a></li>
@@ -82,14 +86,14 @@
                     </ul>
                 </li>
                 <li><a href="#-comparação-entre-as-propostas">Comparação entre as Propostas</a>
-                    <ul>
+                    <ol>
                         <li><a href="#1%EF%B8%8F⃣-proposta-1">Proposta 1</a></li>
                         <li><a href="#2%EF%B8%8F⃣-proposta-2">Proposta 2</a></li>
                         <li><a href="#3%EF%B8%8F⃣-proposta-3">Proposta 3</a></li>
                         <li><a href="#4%EF%B8%8F⃣-proposta-4">Proposta 4</a></li>
                         <li><a href="#5%EF%B8%8F⃣-proposta-5">Proposta 5</a></li>
                         <li><a href="#6%EF%B8%8F⃣-proposta-6">Proposta 6</a></li>
-                    </ul>
+                    </ol>
                 </li>
             </ol>
         </li>
@@ -278,7 +282,7 @@ Este arquivo contém as implementações das funções declaradas em `problema11
 - `gerarArquivos`: Gera arquivos com o nome especificado.
 - `gerarProcessos`: Gera processos com o nome especificado e os vincula a arquivos existentes.
 
-#### Funções de Proposta
+#### ✍🏼 Funções de Proposta
 
 - `proposta1`, `proposta2`, `proposta3`, `proposta4`, `proposta5`, `proposta6`: Implementações das diferentes propostas de solução para o problema. Cada uma dessas funções lida com uma abordagem específica para processar conjuntos de dados.
 
@@ -1809,31 +1813,31 @@ Aqui, a Proposta 1 tem um péssimo desempenho pelo mesmo motivo do teste anterio
 ## 🔍 Escolha da melhor proposta 
 Após os testes vemos que cada uma das propostas apresentadas oferece vantagens e desvantagens, e a escolha da melhor depende de vários fatores, como o tipo de arquivos, a estrutura dos dados e os padrões de acesso. Aqui estão algumas considerações finais sobre o desempenho de cada proposta:
 
-**PROPOSTA 1: Processamento Sequencial**</u>
+**1️⃣ PROPOSTA 1: Processamento Sequencial**</u>
 - **Descrição:** Cada linha de um arquivo de processo é lida e processada de forma sequencial, calculando a soma das raízes quadradas dos números nos arquivos referenciados.
 - **Limitação:** Alta redundância, pois cada arquivo referenciado é processado repetidamente sem aproveitamento de cálculos anteriores, resultando em uma significativa ineficiência.
 
-**PROPOSTA 2: Reaproveitamento de Cálculos por Processo**</u>
+**2️⃣ PROPOSTA 2: Reaproveitamento de Cálculos por Processo**</u>
 - **Descrição:** Introduz um cache para armazenar a soma das raízes quadradas de arquivos já processados dentro de um mesmo processo.
 - **Melhoria:** Reduz a redundância dentro de um único processo, evitando recalcular somas de arquivos já processados.
 - **Limitação:** O cache é descartado ao final de cada processo, não aproveitando os cálculos entre processos diferentes.
 
-**PROPOSTA 3: Cache Global**</u>
+**3️⃣ PROPOSTA 3: Cache Global**</u>
 - **Descrição:** Implementa um cache global que armazena os resultados das somas das raízes quadradas entre todos os processos.
 - **Melhoria:** Aproveita os cálculos realizados entre diferentes processos, aumentando a eficiência global.
 - **Limitação:** Embora o reaproveitamento de cálculos seja maximizado, a busca no cache pode ser ineficiente se não for otimizada.
 
-**PROPOSTA 4: Ordenação e Reaproveitamento**</u>
+**4️⃣ PROPOSTA 4: Ordenação e Reaproveitamento**</u>
 - **Descrição:** Ordena as linhas de cada processo com base no número de arquivos referenciados antes de iniciar o processamento.
 - **Melhoria:** Processa primeiro as linhas com mais arquivos referenciados, otimizando o reaproveitamento dos cálculos iniciais e melhorando a eficiência de cache.
 - **Limitação:** A complexidade adicional da ordenação pode introduzir overhead, e a eficiência depende da distribuição dos dados. 
 
-**PROPOSTA 5: Cache com Busca Binária**</u>
+**5️⃣ PROPOSTA 5: Cache com Busca Binária**</u>
 - **Descrição:** Utiliza um vetor de cache ordenado para armazenar resultados e implementa busca binária para recuperação eficiente dos valores já calculados.
 - **Melhoria:** A busca binária permite uma recuperação muito mais rápida dos valores no cache, otimizando significativamente o tempo de execução.
 - **Limitação:** A manutenção do vetor ordenado e a inserção de novos valores podem introduzir alguma complexidade adicional.
 
-**PROPOSTA 6: Preprocessamento Completo com Cache**</u>
+**6️⃣ PROPOSTA 6: Preprocessamento Completo com Cache**</u>
 - **Descrição:** Pré-calcula a soma das raízes quadradas de todos os arquivos antes de processar os arquivos de processo, armazenando os resultados em um vetor de cache.
 - **Melhoria:** Elimina completamente a necessidade de calcular somas durante o processamento dos arquivos de processo, pois todos os resultados estão pré-computados e disponíveis de forma imediata.
 - **Limitação:** Requer um grande uso de memória para armazenar todos os resultados e um tempo inicial de processamento considerável para calcular todas as somas, mas este tempo é compensado pela eficiência do processamento subsequente, e em casos que não são usados todos os arquivos que foram calculados.
