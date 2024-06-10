@@ -1,8 +1,10 @@
 # 🗃️ Prática 1 - Problema 11
 
-<!-- -fazer seção do grafico em python
-     -fazer seção das analises de resultados 
-     -fazer seção de conclusão 
+<!-- -adicionar emojis
+     -arrumar sumário
+     -colocar referencias certas
+     -refazer estruturas de diretorios
+     -organizar pasta imagens
 -->
 
 <div align="center">
@@ -132,19 +134,31 @@ Arquivos com extensão `.hpp` são comumente usados em C++ para declarar classes
 #### Includes
 Aqui, são incluídas diversas bibliotecas que fornecem funcionalidades essenciais para o programa:
 
-    - `iostream`: Essa biblioteca é utilizada para entrada e saída padrão, permitindo a interação do usuário com o programa por meio do terminal.
-    - `fstream`: Fornece classes e funções para trabalhar com arquivos, possibilitando a leitura e escrita de dados em arquivos do sistema.
-    - `ostream`: Fornece classes e funções relacionadas à saída de dados, permitindo a escrita de dados em fluxos de saída.
-    - `string`: Oferece suporte para manipulação de strings, permitindo a criação, manipulação e processamento de strings de caracteres.
-    - `ctime`: Esta biblioteca fornece funções para manipulação de tempo e data, como obter a hora atual e converter tempo em representações de cadeia de caracteres.
-    - `vector`: Fornece uma implementação de vetor dinâmico em C++, permitindo a criação de arrays dinâmicos que podem crescer e diminuir de tamanho conforme necessário.
-    - `chrono`: Oferece suporte para medição de tempo de forma precisa, permitindo medir a duração de operações ou intervalos de tempo.
-    - `algorithm`: Esta biblioteca fornece uma variedade de funções para operações em sequências de elementos, como ordenação, busca e manipulação de elementos.
-    - `cmath`: Oferece funções matemáticas comuns, como operações aritméticas, funções trigonométricas e funções exponenciais.
-    - `map`: Fornecendo um mapeamento associativo entre chaves e valores, a biblioteca `map` permite armazenar pares chave-valor e acessar os valores associados às chaves de forma eficiente.
-    - `random`: Fornece funções e classes para geração de números pseudoaleatórios, úteis em simulações e algoritmos que requerem aleatoriedade controlada.
-    - `cstdlib`: Fornece suporte para funções de propósito geral em C, incluindo alocação de memória dinâmica, conversão de tipos e manipulação de strings.
-    - `filesystem`: Introduzido no C++17, esta biblioteca oferece suporte para operações de sistema de arquivos, como manipulação de caminhos de arquivo e iteração de diretórios.
+- `iostream`: Essa biblioteca é utilizada para entrada e saída padrão, permitindo a interação do usuário com o programa por meio do terminal.
+
+- `fstream`: Fornece classes e funções para trabalhar com arquivos, possibilitando a leitura e escrita de dados em arquivos do sistema.
+
+- `ostream`: Fornece classes e funções relacionadas à saída de dados, permitindo a escrita de dados em fluxos de saída.
+
+- `string`: Oferece suporte para manipulação de strings, permitindo a criação, manipulação e processamento de strings de caracteres.
+
+- `ctime`: Esta biblioteca fornece funções para manipulação de tempo e data, como obter a hora atual e converter tempo em representações de cadeia de caracteres.
+
+- `vector`: Fornece uma implementação de vetor dinâmico em C++, permitindo a criação de arrays dinâmicos que podem crescer e diminuir de tamanho conforme necessário.
+
+- `chrono`: Oferece suporte para medição de tempo de forma precisa, permitindo medir a duração de operações ou intervalos de tempo.
+
+- `algorithm`: Esta biblioteca fornece uma variedade de funções para operações em sequências de elementos, como ordenação, busca e manipulação de elementos.
+
+- `cmath`: Oferece funções matemáticas comuns, como operações aritméticas, funções trigonométricas e funções exponenciais.
+
+- `map`: Fornecendo um mapeamento associativo entre chaves e valores, a biblioteca `map` permite armazenar pares chave-valor e acessar os valores associados às chaves de forma eficiente.
+
+- `random`: Fornece funções e classes para geração de números pseudoaleatórios, úteis em simulações e algoritmos que requerem aleatoriedade controlada.
+
+- `cstdlib`: Fornece suporte para funções de propósito geral em C, incluindo alocação de memória dinâmica, conversão de tipos e manipulação de strings.
+
+- `filesystem`: Introduzido no C++17, esta biblioteca oferece suporte para operações de sistema de arquivos, como manipulação de caminhos de arquivo e iteração de diretórios.
 
 #### Declaração das funções
 Aqui são declaradas as funções que serão utilizadas no programa. As funções são declaradas sem detalhes sobre suas implementações, pois serão discutidas em detalhes posteriormente em seus respectivos arquivos.
@@ -229,16 +243,16 @@ O script gerarGrafico.py utiliza as bibliotecas pandas e plotly.graph_objects pa
 - Este bloco de código itera sobre as colunas do DataFrame, adicionando uma linha ao gráfico para cada coluna.
     ```python
     for col in df.columns[1:]:
-    fig.add_trace(go.Scatter(
-        x=df['QuantidadeConjuntos'], 
-        y=df[col], 
-        mode='lines+markers', 
-        name=col,
-        marker=dict(size=10) 
-    ))
+        fig.add_trace(go.Scatter(
+            x=df['QuantidadeConjuntos'], 
+            y=df[col], 
+            mode='lines+markers', 
+            name=col,
+            marker=dict(size=10) 
+        ))
     ```
 - Nesta seção, são definidos o título do gráfico e os nomes dos eixos x e y. Além disso, são definidos o estilo do texto, as cores de fundo do papel e do gráfico, e o estilo da legenda.
-    ```python=
+    ```python
     fig.update_layout(
         title={
             'text': 'DESEMPENHO DAS PROPOSTAS',
@@ -270,10 +284,10 @@ O script gerarGrafico.py utiliza as bibliotecas pandas e plotly.graph_objects pa
             borderwidth=1
         ),
         xaxis=dict(
-            gridcolor='rgba(255, 255, 255, 0.2)'  # Cor branca com 20% de opacidade
+            gridcolor='rgba(255, 255, 255, 0.2)' 
         ),
         yaxis=dict(
-            gridcolor='rgba(255, 255, 255, 0.2)'  # Cor branca com 20% de opacidade
+            gridcolor='rgba(255, 255, 255, 0.2)' 
         )
     )
     ```
@@ -283,23 +297,21 @@ O script gerarGrafico.py utiliza as bibliotecas pandas e plotly.graph_objects pa
     fig.add_annotation(
         text="Quantidade de Conjuntos x Tempo de Execução",
         xref="paper", yref="paper",
-        x=0.5, y=1.02,  # Posiciona a legenda abaixo do título
+        x=0.5, y=1.02,  
         showarrow=False,
         font=dict(
             family="Courier New",
             size=18,
-            color="rgba(255, 255, 255)"  # Cor da legenda
+            color="rgba(255, 255, 255)"  
         ),
         align="center"
     )
     ```
 
-- Finalmente, esta linha exibe o gráfico na tela, em uma janela do navegador.
+- Finalmente, esta última linha exibe o gráfico na tela, em uma janela do navegador.
     ```python
     fig.show()
     ```
-
-
 
 
 ## Análise de Complexidade de Cada Proposta
@@ -1080,13 +1092,579 @@ No final, é feito o agradecimento e mostra alguns dados:
 
 
 ## 📈 Análises, Testes e Estudos
+Foram feitos alguns testes para que possamos ver o comportamento de cada proposta de acordo com diferentes tipos de entradas dos números de processos, arquivos, linhas e conjuntos de processos. Foram feitos os seguintes testes:
+
+1. Utilizando os mesmo valores para quantidade de processos, arquivos, linhas e arquivos por linha
+2. Utilizando valores maiores de processos do que arquivos, linhas e arquivos por linha
+3. Utilizando valores maiores de arquivos do que processos, linhas e arquivos por linha
+4. Utilizando valores maiores de linhas do que processos, arquivos e arquivos por linha
+5. Utilizando valores maiores de arquivos por linha do que processos, arquivos e linhas 
+
+É importante lembrar que o números de linhas de cada processo é gerado aleatóriamente com valores de 1 até o valor que estiver digitado, isso acontece tbm para a quantidade de arquivos por linha. Vamos ver que exemplo disso logo abaixo. 
+
+###  Mesmo valores para quantidade de processos, arquivos, linhas e arquivos por linha
+Vamos fazer com 4 valores diferentes (1, 10, 50, 100).. 
+
+- **Primeiro teste (1):** Primeiro colocamos o valor que nós queremos: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste1.1.png" alt="Teste com todos os valores iguais (1)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste1.2.png" alt="Teste com todos os valores iguais (1)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste1.3.png" alt="Teste com todos os valores iguais (1)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
+        </figure>
+    </p>
+    
+    Vemos que os valores deram muito parecido pois, como todos os valores são um, faz com que tudo seja calculados uma vez e isso resulta em em tempos de execução parecidos. 
+
+- **Segundo teste (10):** Repetimos o processo navamente, colocamos o valor que nós queremos: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste2.1.png" alt="Teste com todos os valores iguais (10)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste2.2.png" alt="Teste com todos os valores iguais (10)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste2.3.png" alt="Teste com todos os valores iguais (10)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+        </figure>
+    </p>
+    
+    Como os valores das Proposta 3 até a Proprota 6 deram muito próximos, ocultamos os valores das Propostas 1 e 2, para uma melhor visualização das outras propostas. 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste2.4.png" alt="Teste com todos os valores iguais (10)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+        </figure>
+    </p>
+    
+
+    Aqui já vemos uma grande diferença entre os valores das propostas, principalmente da 1 e a 2 em relação as demais. 
+
+- **Terceiro teste (50):** Primeiro colocamos o valor que nós queremos: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste3.1.png" alt="Teste com todos os valores iguais (50)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste3.2.png" alt="Teste com todos os valores iguais (50)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste3.3.png" alt="Teste com todos os valores iguais (50)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+        </figure>
+    </p>
+    
+    Para uma melhor visualização de todas as propostas, ocultamos as Proposta 1 e 2.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste3.4.png" alt="Teste com todos os valores iguais (50)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+        </figure>
+    </p>
+
+    Observe a grande diferença entre as Proposta 1 e 2 com as demais propostas, depois a diferença entre as Propostas 3 e 4 com as Propostas 5 e 6.
+
+- **Quarto teste (100):** Primeiro colocamos o valor que nós queremos: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste4.1.png" alt="Teste com todos os valores iguais (100)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste4.2.png" alt="Teste com todos os valores iguais (100)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste4.3.png" alt="Teste com todos os valores iguais (100)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste4.4.png" alt="Teste com todos os valores iguais (100)">
+        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+        </figure>
+    </p>
+    
+    Percebemos que quanto mais aumentamos os valores a diferença de tempo entre as propostas aumenta cada vez mais, principalmente entre as Propostas 1 para as demais, o mesmo com a Proposta 2 com as demais. Podemos visualizar um bom desempenho das proposta 5 e 6, que consegue manter seus valores parecidos mesmo aumentando a quantidade de processos.
+
+Com todos os valores iguais vemos que a cada vez q aumentamos as entradas as Propostas 5 e 6 se destacam. Podemos observar principalmente quando colocamos a entrada (100) com vários conjuntos de processos diferentes, percebemos que essas propostas, mesmo que aumentasse a quantidade de conjuntos tiveram uma diferença muito baixa. Isso já nos mostra uma boa eficiência e um destaque delas em relação as outras propostas. Vamos ver outros testes: 
+
+### Valores maiores de processos do que arquivos, linhas e arquivos por linha
+Aqui vamos fazer com 3 testes: 
+
+- **Primeiro teste (50 processos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste5.1.png" alt="Teste com valores de processos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste5.2.png" alt="Teste com valores de processos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste5.3.png" alt="Teste com valores de processos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste5.4.png" alt="Teste com valores de processos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Aqui mesmo com um grande aumento da quantidade de processos vemos que se mantém o tempo de execução bem próximo das Propostas 3 a 6.
+
+- **Segundo teste (100 processos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste6.1.png" alt="Teste com valores de processos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste6.2.png" alt="Teste com valores de processos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste6.3.png" alt="Teste com valores de processos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste6.4.png" alt="Teste com valores de processos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Vemos que aqui existe uma pequena distância entre as Propostas 3 e 4 em relação as Propostas 5 e 6, mas mesmo assim elas continuam tendo tempos parecidos. 
+
+- **Terceiro teste (1000 processos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste7.1.png" alt="Teste com valores de processos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste7.2.png" alt="Teste com valores de processos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste7.3.png" alt="Teste com valores de processos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste7.4.png" alt="Teste com valores de processos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Mesmo com valores muito maiores que os outros testes os valores continuaram parecidos com os padrões que já tinhamos observado.
+
+Aqui, conseguimos ver que quantidade de processos não interfiriu tanto no que tinhamos observado nos testes anteriores. Vemos que tem uma grande discrepância da Proposta 1 com as demais, o mesmo com a Proposta 2. Depois as outras propostas tem seus valores parecidos, porém quanto mais vamos aumentando os valores, as Propostas 3 e 4 vão se distanciando das Propostas 5 e 6, e entre todas a Proposta 6 se mostra com mais eficiência. 
+
+### Valores maiores de arquivos do que processos, linhas e arquivos por linha
+Aqui vamos fazer com 3 testes: 
+
+- **Primeiro teste (50 arquivos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste8.1.png" alt="Teste com valores de arquivos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste8.2.png" alt="Teste com valores de arquivos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste8.3.png" alt="Teste com valores de arquivos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste8.4.png" alt="Teste com valores de arquivos maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Vemos que continua o mesmo padrão dos outros testes.
+
+- **Segundo teste (100 arquivos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste9.1.png" alt="Teste com valores de arquivos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste9.2.png" alt="Teste com valores de arquivos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste9.3.png" alt="Teste com valores de arquivos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste9.4.png" alt="Teste com valores de arquivos maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Neste vemos algo interressante, nos demais teste a Proposta 6 vem se destacando por sua boa performace, porém aqui isso mudou um pouco. 
+
+- **Terceiro teste (1000 arquivos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste10.1.png" alt="Teste com valores de arquivos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste10.2.png" alt="Teste com valores de arquivos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste10.3.png" alt="Teste com valores de arquivos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Diferentes das outras, aqui tivemos que ocultar a Proposta 6, para visualizar melhor as outras. 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste10.4.png" alt="Teste com valores de arquivos maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Observamos que tivemos um cenário diferente, dos outros testes. 
+
+Já era esperado que a Proposta 6 não seria uma boa opção para esse caso, pois esta proposta calcula todos os arquivos para depois olhar quais seriam necessários e exigidos pelos processos. Aqui, neste caso, aumentamos o número de arquivos, e mantemos os outros valores baixo e isso fez com que muitos dos arquivos não fossem nem utilizados, isso fez com que a Proposta 6 não se destacasse como uma boa opção.
+
+### Valores maiores de linhas do que processos, arquivos e arquivos por linha
+Aqui vamos fazer com 3 testes: 
+
+- **Primeiro teste (50 linhas, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste11.1.png" alt="Teste com valores de linhas maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste11.2.png" alt="Teste com valores de linhas maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste11.3.png" alt="Teste com valores de linhas maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste11.4.png" alt="Teste com valores de linhas maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Aqui o desempenho da Proposta 1 se mostra pior do que os outros testes.
+
+- **Segundo teste (100 linhas, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste12.1.png" alt="Teste com valores de linhas maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste12.2.png" alt="Teste com valores de linhas maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste12.3.png" alt="Teste com valores de linhas maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste12.4.png" alt="Teste com valores de linhas maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Aqui a Proposta 1 piora ainda mais.
+
+- **Terceiro teste (1000 linhas, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste13.1.png" alt="Teste com valores de linhas maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste13.2.png" alt="Teste com valores de linhas maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste13.3.png" alt="Teste com valores de linhas maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Neste vamos ocultar primeiro somente a Proposta 1.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste13.4.png" alt="Teste com valores de linhas maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+        </figure>
+    </p>
+
+    Agora ocultando a Proposta 2 também.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste13.5.png" alt="Teste com valores de linhas maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Mesmo com a piora na performace da Proposta 1, ainda sim a Proposta 5 e 6 se mostram mais eficientes e com um desempenho melhor a cada vez que aumentamos os valores. 
+
+Analisando bem a Proposta 1 piorou neste caso pelo fato de ela analisar um arquivo de cada vez sem armazenar nenhuma soma e cada linha tem vários arquivos, e quando colocamos valores muito grandes na quantidade de linhas, faz com que a quantidade de arquivos aumente muito, mesmo que eles sejam repetidos várias vezes, esta proposta calcula todos. 
 
 
+### Valores maiores de arquivos por linha do que processos, arquivos e linhas
+Aqui vamos fazer com 3 testes: 
 
+- **Primeiro teste (50 arquivos por linha, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste14.1.png" alt="Teste com valores de arquivos por linha maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste14.2.png" alt="Teste com valores de arquivos por linha maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste14.3.png" alt="Teste com valores de arquivos por linha maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste14.4.png" alt="Teste com valores de arquivos por linha maiores (50)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+        </figure>
+    </p>
+    
+    Como no teste anterior, a Proposta 1 tem um desempenho pior.
+
+- **Segundo teste (100 arquivos por linha, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste15.1.png" alt="Teste com valores de arquivos por linha maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste15.2.png" alt="Teste com valores de arquivos por linha maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste15.3.png" alt="Teste com valores de arquivos por linha maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste15.4.png" alt="Teste com valores de arquivos por linha maiores (100)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+        </figure>
+    </p>
+    
+    Vemos ainda mais a piora da Proposta 1.
+
+- **Terceiro teste (1000 arquivos por linha, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
+
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste16.1.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+        </figure>
+    </p>
+
+    Depois, é executado os cálculos e plotado o gráfico: 
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste16.2.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+        </figure>
+    </p>
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste16.3.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Neste vamos ocultar primeiro somente a Proposta 1.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste16.4.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+        </figure>
+    </p>
+
+    Agora ocultando a Proposta 2 também.
+    <p align="center">
+        <figure align="center">
+        <img src="./images/teste16.5.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+        </figure>
+    </p>
+    
+    Com o aumento da quantidade de arquivos por linha, faz com que a Proposta 1 piore ainda mais.
+
+Aqui, a Proposta 1 tem um péssimo desempenho pelo mesmo motivo do teste anterior, com o aumento da quantidade de arquivos faz ela fazer muitos cálculos, mesmo que muitas das vezes esses arquivos são os mesmos. E isso faz com que as Propostas que tem um cache se destacam. Vemos que as Proposta 5 e 6, novamente, se mostram muito bem em seus desempenhos. 
+
+**OBSERVAÇÃO:** Fizemos aqui apenas testes com os valores de entrada, sem analisar exatamente os arquivos e processos que estavam sendo gerados. 
 
 ## Escolha da melhor proposta 
-Cada uma das propostas apresentadas oferece vantagens e desvantagens, e a escolha da melhor depende de vários fatores, como o tipo de arquivos, a estrutura dos dados e os padrões de acesso. Aqui estão algumas considerações finais sobre o desempenho de cada proposta:
+Após os testes vemos que cada uma das propostas apresentadas oferece vantagens e desvantagens, e a escolha da melhor depende de vários fatores, como o tipo de arquivos, a estrutura dos dados e os padrões de acesso. Aqui estão algumas considerações finais sobre o desempenho de cada proposta:
 
 **PROPOSTA 1: Processamento Sequencial**
 
@@ -1107,7 +1685,7 @@ Cada uma das propostas apresentadas oferece vantagens e desvantagens, e a escolh
 **PROPOSTA 4: Ordenação e Reaproveitamento**
 - **Descrição:** Ordena as linhas de cada processo com base no número de arquivos referenciados antes de iniciar o processamento.
 - **Melhoria:** Processa primeiro as linhas com mais arquivos referenciados, otimizando o reaproveitamento dos cálculos iniciais e melhorando a eficiência de cache.
-- **Limitação:** A complexidade adicional da ordenação pode introduzir overhead, e a eficiência depende da distribuição dos dados.
+- **Limitação:** A complexidade adicional da ordenação pode introduzir overhead, e a eficiência depende da distribuição dos dados. 
 
 **PROPODTA 5: Cache com Busca Binária**
 - **Descrição:** Utiliza um vetor de cache ordenado para armazenar resultados e implementa busca binária para recuperação eficiente dos valores já calculados.
@@ -1117,13 +1695,12 @@ Cada uma das propostas apresentadas oferece vantagens e desvantagens, e a escolh
 **Proposta 6: Preprocessamento Completo com Cache**
 - **Descrição:** Pré-calcula a soma das raízes quadradas de todos os arquivos antes de processar os arquivos de processo, armazenando os resultados em um vetor de cache.
 - **Melhoria:** Elimina completamente a necessidade de calcular somas durante o processamento dos arquivos de processo, pois todos os resultados estão pré-computados e disponíveis de forma imediata.
-- **Limitação:** Requer um grande uso de memória para armazenar todos os resultados e um tempo inicial de processamento considerável para calcular todas as somas, mas este tempo é compensado pela eficiência do processamento subsequente.
-
+- **Limitação:** Requer um grande uso de memória para armazenar todos os resultados e um tempo inicial de processamento considerável para calcular todas as somas, mas este tempo é compensado pela eficiência do processamento subsequente, e em casos que não são usados todos os arquivos que foram calculados.
 
 ### Justificativa para Parar de Procurar Outras Maneiras
 Após a implementação da Proposta 6, a análise dos tempos de execução e da eficiência revelou que:
 
-1. **Eficiência Máxima Alcançada:** O tempo de execução para processar cada linha dos arquivos de processo foi drasticamente reduzido devido ao pré-cálculo e armazenamento eficiente das somas das raízes quadradas. A busca no vetor de cache pré-calculado é extremamente rápida, praticamente eliminando o tempo de processamento repetitivo.
+1. **Eficiência Alta Alcançada:** O tempo de execução para processar cada linha dos arquivos de processo foi drasticamente reduzido devido ao pré-cálculo e armazenamento eficiente das somas das raízes quadradas. A busca no vetor de cache pré-calculado é extremamente rápida, praticamente eliminando o tempo de processamento repetitivo.
 
 2. **Custo-Benefício:** Qualquer tentativa adicional de otimização apresentaria melhorias marginais a um custo operacional e de complexidade significativamente maior. A implementação de algoritmos mais sofisticados ou o uso de técnicas de paralelismo ou distribuição poderia resultar em ganhos menores em relação ao custo de implementação e manutenção.
 
@@ -1131,9 +1708,19 @@ Após a implementação da Proposta 6, a análise dos tempos de execução e da 
 
 4. **Simplicidade e Mantenabilidade:** A Proposta 6, apesar de exigir um tempo de pré-processamento significativo, simplifica consideravelmente o código subsequente, tornando-o mais fácil de manter e menos propenso a erros. O design claro e eficiente facilita futuras modificações ou expansões do sistema.
 
-Portanto, a escolha da Proposta 6 como a solução final foi baseada em uma análise detalhada de eficiência, complexidade, custo-benefício e simplicidade de manutenção. Esta proposta atende plenamente aos requisitos do problema, fornecendo um equilíbrio ideal entre desempenho e praticidade quando a maioria dos arquivos são acessados, mas pode desperdiçar cálculos quando muitos arquivos não são usados. Mas também sabemos que para muitos casos práticos, Proposta 3 ou Proposta 5 são geralmente as melhores opções devido ao uso eficiente do cache. 
+Portanto, a escolha da Proposta 6 como a solução final para parar de procurar outras maneiras foi baseada em uma análise detalhada de eficiência, complexidade, custo-benefício e simplicidade de manutenção. Esta proposta atende plenamente aos requisitos do problema, fornecendo um equilíbrio ideal entre desempenho e praticidade. Além de que através de testes realizados, já conseguimos ver uma grande evolução no tempo de execução desde a primeira proposta até a última.
 
 ## 🎉 Conclusão 
+A experiência de realizar este trabalho foi enriquecedora e desafiadora, proporcionando uma compreensão aprofundada das diferentes estratégias para otimizar a eficiência de cálculos de somas. Ao avaliar diversas propostas, foi possível observar como diferentes abordagens afetam o desempenho e a complexidade computacional. O trabalho nos proporcionou uma compreensão profunda das complexidades envolvidas na manipulação eficiente de dados, especialmente quando se trata de cálculos repetitivos e do gerenciamento de caches. Cada proposta trouxe desafios e aprendizados distintos, permitindo-nos experimentar com diferentes abordagens e analisar suas implicações teóricas e práticas.
+
+Os testes realizados foram cruciais para entender o desempenho real de cada proposta. Testamos vários cenários, desde entradas pequenas e simples até configurações mais complexas com grandes volumes de dados. Esses testes demonstraram claramente como a escolha da estratégia de cache e processamento pode afetar drasticamente o tempo de execução e a eficiência geral do sistema. A análise detalhada dos tempos de execução forneceu percepções valiosas sobre os pontos fortes e fracos de cada abordagem, destacando a importância de considerar a distribuição e os padrões de acesso dos dados ao escolher uma solução.
+
+Durante a análise, a Proposta 3 destacou-se pela eficiência devido ao uso de um cache global que minimiza redundâncias de cálculos. No entanto, a Proposta 5, com busca binária no cache, apresentou um equilíbrio interessante, mostrando-se adequada para situações com padrões de acesso muito variáveis. Já a Proposta 6 pode ser a melhor escolha em cenários onde a maioria dos arquivos é acessada, apesar do risco de calcular somas desnecessárias.
+
+Em conclusão, o processo de implementação e análise dessas propostas nos ensinou não apenas sobre as técnicas específicas de otimização, mas também sobre a importância de uma abordagem meticulosa e baseada em dados para a resolução de problemas de desempenho. Embora a Proposta 6 tenha se destacado em termos de eficiência, ficou claro que a escolha da melhor solução depende de vários fatores, incluindo o tipo e a frequência de acesso aos arquivos. Esta experiência reforçou a importância de testar e validar rigorosamente diferentes soluções em cenários reais antes de tomar decisões de implementação.
+
+Essa experiência reforçou a importância de uma análise cuidadosa e a realização de testes práticos ao desenvolver soluções computacionais. O processo de avaliação não só ofereceu uma compreensão mais profunda das técnicas estudadas, mas também destacou a necessidade de adaptação às especificidades de cada problema. Através deste estudo, ficou claro que não existe uma solução universalmente superior, e a escolha da melhor proposta depende das características particulares de cada aplicação.
+
 
 ## 🔨 Ambiente de Compilação
 
@@ -1173,20 +1760,31 @@ Para mais informações ou sugestões, sinta-se à vontade para entrar em contat
 Ficarei feliz em receber feedbacks, contribuições ou responder a quaisquer dúvidas que você possa ter sobre o programa. 
 
 ## 🔖 Referências
-1. João Arthur. **Análise Assintótica**. Disponível em: [https://joaoarthurbm.github.io/eda/posts/analise-assintotica/](https://joaoarthurbm.github.io/eda/posts/analise-assintotica/). Acesso em: 12 abr. 2024.
+1. CEFET-MG. **Aula 1 - Análise de Algoritmos**. Disponível em: [https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf](https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf). Acesso em:  10 jun. 2024.
 
-2. Pereira, F. **Análise de Algoritmos**. Disponível em: [https://www.ime.usp.br/~pf/analise_de_algoritmos/](https://www.ime.usp.br/~pf/analise_de_algoritmos/). Acesso em: 12 abr. 2024.
+2. Arora, S., Barak, B. **Computational Complexity: A Modern Approach**. Disponível em: [https://theory.cs.princeton.edu/complexity/book.pdf](https://theory.cs.princeton.edu/complexity/book.pdf). Acesso em:  10 jun. 2024.
 
-3. XVI ENID. **PROLICEN: Engenharia de Software: análise de complexidade assintótica de algoritmos**. Disponível em: [http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf](http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf). Acesso em: 12 abr. 2024.
+3. Krupansky, J. **What is Algorithmic Complexity (or Computational Complexity) and Big-O Notation?**. Disponível em: [https://jackkrupansky.medium.com/what-is-algorithmic-complexity-or-computational-complexity-and-big-o-notation-9c1e5eb6ad48](https://jackkrupansky.medium.com/what-is-algorithmic-complexity-or-computational-complexity-and-big-o-notation-9c1e5eb6ad48). Acesso em:  10 jun. 2024.
 
-4. Hokama. **CIC110 - Estrutura de Dados - Análise Assintótica**. Disponível em: [https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf](https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf). Acesso em: 12 abr. 2024.
+4. **Computational Complexity**. Stanford Encyclopedia of Philosophy. Disponível em: [https://plato.stanford.edu/entries/computational-complexity/](https://plato.stanford.edu/entries/computational-complexity/). Acesso em:  10 jun. 2024.
 
-5. Martins, A. **Análise de Complexidade de Algoritmos**. Disponível em: [http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf](http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf). Acesso em: 12 abr. 2024.
+5. **Computational Complexity Theory**. Wikipedia. Disponível em: [https://en.wikipedia.org/wiki/Computational_complexity_theory](https://en.wikipedia.org/wiki/Computational_complexity_theory). Acesso em:  10 jun. 2024.
 
-6. Reinaldo. **Análise de Algoritmos (Parte 3)**. Disponível em: [http://www.decom.ufop.br/reinaldo/site_media/uploads/2014-01-bcc202/aulas/aula_06_-_analise_de_algoritmos_(parte_3)_(v1).pdf](http://www.decom.ufop.br/reinaldo/site_media/uploads/2014-01-bcc202/aulas/aula_06_-_analise_de_algoritmos_(parte_3)_(v1).pdf). Acesso em: 12 abr. 2024.
+6. **Análise de Complexidade de Algoritmos**. Iugu Blog. Disponível em: [https://www.iugu.com/blog/analise-complexidade-algoritmos](https://www.iugu.com/blog/analise-complexidade-algoritmos). Acesso em:  10 jun. 2024.
 
-7. CEFET-MG. **Aula 1 - Análise de Algoritmos**. Disponível em: [https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf](https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf). Acesso em: 12 abr. 2024.
+7. Cormen, T. H., et al. **Algoritmos: Teoria e Prática, 3ª Edição**. Disponível em: [https://computerscience360.wordpress.com/wp-content/uploads/2018/02/algoritmos-teoria-e-prc3a1tica-3ed-thomas-cormen.pdf](https://computerscience360.wordpress.com/wp-content/uploads/2018/02/algoritmos-teoria-e-prc3a1tica-3ed-thomas-cormen.pdf). Acesso em:  10 jun. 2024.
 
+8. Bhargava, A. Y. **Entendendo Algoritmos: Um Guia Ilustrado Para Programadores e Outros Curiosos**. Disponível em: [https://github.com/KAYOKG/BibliotecaDev/blob/main/LivrosDev/Entendendo%20Algoritmos%20-%20Um%20Guia%20Ilustrado%20Para%20Programadores%20e%20Outros%20Curiosos%20-%20Autor%20(Aditya%20Y.%20Bhargava).pdf](https://github.com/KAYOKG/BibliotecaDev/blob/main/LivrosDev/Entendendo%20Algoritmos%20-%20Um%20Guia%20Ilustrado%20Para%20Programadores%20e%20Outros%20Curiosos%20-%20Autor%20(Aditya%20Y.%20Bhargava).pdf). Acesso em:  10 jun. 2024.
 
+9. Knuth, D. E. **The Art of Computer Programming, Vol. 1: Fundamental Algorithms, 3rd Edition**. Disponível em: [https://www.haio.ir/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf](https://www.haio.ir/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf). Acesso em:  10 jun. 2024.
 
+10. João Arthur. **Análise Assintótica**. Disponível em: [https://joaoarthurbm.github.io/eda/posts/analise-assintotica/](https://joaoarthurbm.github.io/eda/posts/analise-assintotica/). Acesso em:  10 jun. 2024.
+
+11. Pereira, F. **Análise de Algoritmos**. Disponível em: [https://www.ime.usp.br/~pf/analise_de_algoritmos/](https://www.ime.usp.br/~pf/analise_de_algoritmos/). Acesso em:  10 jun. 2024.
+
+12. XVI ENID. **PROLICEN: Engenharia de Software: análise de complexidade assintótica de algoritmos**. Disponível em: [http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf](http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf). Acesso em:  10 jun. 2024.
+
+13. Hokama. **CIC110 - Estrutura de Dados - Análise Assintótica**. Disponível em: [https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf](https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf). Acesso em:  10 jun. 2024.
+
+14. Martins, A. **Análise de Complexidade de Algoritmos**. Disponível em: [http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf](http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf). Acesso em:  10 jun. 2024.
 
