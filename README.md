@@ -14,78 +14,84 @@
 <details>
   <summary>📌 Tópicos</summary>
     <ol>
-        <li><a href="#-introdução">Introdução</a></li>
+        <li><a href="#-introdução">Introdução</a>
+            <ol>
+                <li><a href="#-descrição-do-problema">Descrição do Problema</a></li>
+                <li><a href="#-abordagens">Abordagens</a></li>
+                <li><a href="#-objetivo">Objetivo</a></li>
+            </ol>
+        </li>
         <li><a href="#-desenvolvimento">Desenvolvimento</a>
             <ol>
-                <li><a href="#-proposta-1">Proposta 1</a></li>
-                <li><a href="#-proposta-2">Proposta 2</a></li>
-                <li><a href="#-proposta-3">Proposta 3</a></li>
-                <li><a href="#-proposta-4">Proposta 4</a></li>
-                <li><a href="#-proposta-5">Proposta 5</a></li>
-                <li><a href="#-proposta-6">Proposta 6</a></li>
+                <li><a href="#1%EF%B8%8F⃣-proposta-1">Proposta 1</a></li>
+                <li><a href="#2%EF%B8%8F⃣-proposta-2">Proposta 2</a></li>
+                <li><a href="#3%EF%B8%8F⃣-proposta-3">Proposta 3</a></li>
+                <li><a href="#4%EF%B8%8F⃣-proposta-4">Proposta 4</a></li>
+                <li><a href="#5%EF%B8%8F⃣-proposta-5">Proposta 5</a></li>
+                <li><a href="#6%EF%B8%8F⃣-proposta-6">Proposta 6</a></li>
             </ol>
         </li>
         <li><a href="#-implementação">Implementação</a>
             <ol>
-                <li><a href="#-arquivo-problema11hpp">Arquivo `problema11.hpp`</a>
+                <li><a href="#-arquivo-problema11hpp">Arquivo problema11.hpp</a>
                     <ul>
                         <li><a href="#-includes">Includes</a></li>
                         <li><a href="#-declaração-das-funções">Declaração das funções</a></li>
                     </ul>
                 </li>
-                <li><a href="#-arquivo-problema11cpp">Arquivo `problema11.cpp`</a>
+                <li><a href="#-arquivo-problema11cpp">Arquivo problema11.cpp</a>
                     <ul>
                         <li><a href="#-funções-de-geração-de-processos-e-arquivos">Funções de Geração de Processos e Arquivos</a></li>
-                        <li><a href="#-outras-funções">Outras Funções</a></li>
+                        <li><a href="#%EF%B8%8F-outras-funções">Outras Funções</a></li>
                         <li><a href="#-funções-de-ordenação">Funções de Ordenação</a></li>
                         <li><a href="#-funções-de-cache">Funções de Cache</a></li>
-                        <li><a href="#-funções-de-limpeza">Funções de Limpeza</a></li>
+                        <li><a href="#%EF%B8%8F-funções-de-limpeza">Funções de Limpeza</a></li>
                     </ul>
                 </li>
-                <li><a href="#-arquivo-maincpp">Arquivo `main.cpp`</a></li>
-                <li><a href="#-arquivo-gerargráficopy">Arquivo `gerarGrafico.py`</a></li>
+                <li><a href="#-arquivo-maincpp">Arquivo main.cpp</a></li>
+                <li><a href="#-arquivo-gerargraficopy">Arquivo gerarGrafico.py</a></li>
             </ol>
         </li>
         <li><a href="#-análise-de-complexidade-de-cada-proposta">Análise de Complexidade de Cada Proposta</a>
             <ol>
-                <li><a href="#-análise-de-complexidade-da-proposta-1">🧮 Análise de Complexidade da Proposta 1</a>
+                <li><a href="#-análise-de-complexidade-da-proposta-1">Análise de Complexidade da Proposta 1</a>
                     <ul>
-                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                        <li><a href="#-cálculo-da-complexidade-total">Cálculo da Complexidade Total</a></li>
                     </ul>
                 </li>
-                <li><a href="#-análise-de-complexidade-da-proposta-2">🧮 Análise de Complexidade da Proposta 2</a>
+                <li><a href="#-análise-de-complexidade-da-proposta-2">Análise de Complexidade da Proposta 2</a>
                     <ul>
-                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                        <li><a href="#-cálculo-da-complexidade-total">Cálculo da Complexidade Total</a></li>
                     </ul>
                 </li>
-                <li><a href="#-análise-de-complexidade-da-proposta-3">🧮 Análise de Complexidade da Proposta 3</a>
+                <li><a href="#-análise-de-complexidade-da-proposta-3">Análise de Complexidade da Proposta 3</a>
                     <ul>
-                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                        <li><a href="#-cálculo-da-complexidade-total">Cálculo da Complexidade Total</a></li>
                     </ul>
                 </li>
-                <li><a href="#-análise-de-complexidade-da-proposta-4">🧮 Análise de Complexidade da Proposta 4</a>
+                <li><a href="#-análise-de-complexidade-da-proposta-4">Análise de Complexidade da Proposta 4</a>
                     <ul>
-                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                        <li><a href="#-cálculo-da-complexidade-total">Cálculo da Complexidade Total</a></li>
                     </ul>
                 </li>
-                <li><a href="#-análise-de-complexidade-da-proposta-5">🧮 Análise de Complexidade da Proposta 5</a>
+                <li><a href="#-análise-de-complexidade-da-proposta-5">Análise de Complexidade da Proposta 5</a>
                     <ul>
-                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                        <li><a href="#-cálculo-da-complexidade-total">Cálculo da Complexidade Total</a></li>
                     </ul>
                 </li>
-                <li><a href="#-análise-de-complexidade-da-proposta-6">🧮 Análise de Complexidade da Proposta 6</a>
+                <li><a href="#-análise-de-complexidade-da-proposta-6">Análise de Complexidade da Proposta 6</a>
                     <ul>
-                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                        <li><a href="#-cálculo-da-complexidade-total">Cálculo da Complexidade Total</a></li>
                     </ul>
                 </li>
-                <li><a href="#-comparação-entre-as-proposta">Comparação entre as Proposta</a>
+                <li><a href="#-comparação-entre-as-propostas">Comparação entre as Propostas</a>
                     <ul>
-                        <li><a href="#-proposta-1">Proposta 1</a></li>
-                        <li><a href="#-proposta-2">Proposta 2</a></li>
-                        <li><a href="#-proposta-3">Proposta 3</a></li>
-                        <li><a href="#-proposta-4">Proposta 4</a></li>
-                        <li><a href="#-proposta-5">Proposta 5</a></li>
-                        <li><a href="#-proposta-6">Proposta 6</a></li>
+                        <li><a href="#1%EF%B8%8F⃣-proposta-1">Proposta 1</a></li>
+                        <li><a href="#2%EF%B8%8F⃣-proposta-2">Proposta 2</a></li>
+                        <li><a href="#3%EF%B8%8F⃣-proposta-3">Proposta 3</a></li>
+                        <li><a href="#4%EF%B8%8F⃣-proposta-4">Proposta 4</a></li>
+                        <li><a href="#5%EF%B8%8F⃣-proposta-5">Proposta 5</a></li>
+                        <li><a href="#6%EF%B8%8F⃣-proposta-6">Proposta 6</a></li>
                     </ul>
                 </li>
             </ol>
@@ -96,9 +102,9 @@
             <ul>
                 <li><a href="#-apresentação-do-problema">Apresentação do problema</a></li>
                 <li><a href="#-gerando-arquivos-e-processos">Gerando Arquivos e Processos</a></li>
-                <li><a href="#-medição-do-tempo-de-execução-das-propostas">Medição do Tempo de Execução das Propostas</a></li>
-                <li><a href="#-arquivo-outputtxt">Arquivo `output.txt`</a></li>
-                <li><a href="#-arquivo-temposexecuçaocsv">Arquivo `tempos_execução.csv`</a></li>
+                <li><a href="#%EF%B8%8F-medição-do-tempo-de-execução-das-propostas">Medição do Tempo de Execução das Propostas</a></li>
+                <li><a href="#-arquivo-outputtxt">Arquivo output.txt</a></li>
+                <li><a href="#-arquivo-tempos_execuçãocsv">Arquivo tempos_execução.csv</a></li>
                 <li><a href="#-gerando-gráfico">Gerando Gráfico</a></li>
                 <li><a href="#-análise-de-resultados">Análise de Resultados</a></li>
                 <li><a href="#-agradecimento-e-dados">Agradecimento e dados</a></li>
@@ -106,11 +112,11 @@
         </li>
         <li><a href="#-análises-testes-e-estudos">Análises, Testes e Estudos</a>
             <ul>
-                <li><a href="#-mesmo-valores-para-quantidade-de-processos-arquivos-linhas-e-arquivos-por-linha">Mesmo valores para quantidade de processos, arquivos, linhas e arquivos por linha</a></li>
-                <li><a href="#-valores-maiores-de-processos-do-que-arquivos-linhas-e-arquivos-por-linha">Valores maiores de processos do que arquivos, linhas e arquivos por linha</a></li>
-                <li><a href="#-valores-maiores-de-arquivos-do-que-processos-linhas-e-arquivos-por-linha">Valores maiores de arquivos do que processos, linhas e arquivos por linha</a></li>
-                <li><a href="#-valores-maiores-de-linhas-do-que-processos-arquivos-e-arquivos-por-linha">Valores maiores de linhas do que processos, arquivos e arquivos por linha</a></li>
-                <li><a href="#-valores-maiores-de-arquivos-por-linha-do-que-processos-arquivos-e-linhas">Valores maiores de arquivos por linha do que processos, arquivos e linhas</a></li>
+                <li><a href="#--mesmo-valores-para-quantidade-de-processos-arquivos-linhas-e-arquivos-por-linha">Mesmo valores para quantidade de processos, arquivos, linhas e arquivos por linha</a></li>
+                <li><a href="#--valores-maiores-de-processos-do-que-arquivos-linhas-e-arquivos-por-linha">Valores maiores de processos do que arquivos, linhas e arquivos por linha</a></li>
+                <li><a href="#--valores-maiores-de-arquivos-do-que-processos-linhas-e-arquivos-por-linha">Valores maiores de arquivos do que processos, linhas e arquivos por linha</a></li>
+                <li><a href="#--valores-maiores-de-linhas-do-que-processos-arquivos-e-arquivos-por-linha">Valores maiores de linhas do que processos, arquivos e arquivos por linha</a></li>
+                <li><a href="#--valores-maiores-de-arquivos-por-linha-do-que-processos-arquivos-e-linhas">Valores maiores de arquivos por linha do que processos, arquivos e linhas</a></li>
             </ul>
         </li>
         <li><a href="#-escolha-da-melhor-proposta">Escolha da Melhor Proposta</a>
@@ -128,6 +134,8 @@
 
 ## 🚀 Introdução 
 Este problema foi apresentado através de uma atividade, Prática 1, do professor Michel Pires na disciplina de Algoritmos e Estruturas de Dados I. A atividades Prática 1 é composta por problemas sobre Análise Assintótica e Complexidade Computacional. O chamado Problema 11, consiste inicialmente em fazer o cálculo das somas das raízes quadradas dos números contidos em arquivos referenciados por arquivos de processo. A ideia do professor é fazer com que seus alunos sejam incentivados a explorar as oportunidades de avaliação e melhoria, discutindo essas melhorias e seus possíveis custos operacionais. 
+
+<p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 ### 🔍 Descrição do Problema
 Temos dois tipos principais de arquivos:
@@ -250,7 +258,6 @@ Aqui, são incluídas diversas bibliotecas que fornecem funcionalidades essencia
 
 #### 📄 Declaração das funções
 Aqui são declaradas as funções que serão utilizadas no programa. As funções são declaradas sem detalhes sobre suas implementações, pois serão discutidas em detalhes posteriormente em seus respectivos arquivos.
-
 
 ### 📁 Arquivo `problema11.cpp`
 
