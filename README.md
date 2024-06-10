@@ -1,9 +1,6 @@
 # 🗃️ Prática 1 - Problema 11
 
-<!-- -adicionar emojis
-     -arrumar sumário
-     -colocar referencias certas
-     -refazer estruturas de diretorios
+<!-- -refazer estruturas de diretorios
      -organizar pasta imagens
 -->
 
@@ -18,13 +15,109 @@
   <summary>📌 Tópicos</summary>
     <ol>
         <li><a href="#-introdução">Introdução</a></li>
-        <li><a href="#-análise-assintótica">Análise Assintótica</a></li>
-        <li><a href="#-implementação">Implementação</a></li>
-        <li><a href="#-análise-de-complexidade-de-cada-proposta">Análise de Complexidade de Cada Proposta</a></li>        
-        <li><a href="#-estrutura-de-diretorios">Estrutura de Diretórios</a></li>
+        <li><a href="#-desenvolvimento">Desenvolvimento</a>
+            <ol>
+                <li><a href="#-proposta-1">Proposta 1</a></li>
+                <li><a href="#-proposta-2">Proposta 2</a></li>
+                <li><a href="#-proposta-3">Proposta 3</a></li>
+                <li><a href="#-proposta-4">Proposta 4</a></li>
+                <li><a href="#-proposta-5">Proposta 5</a></li>
+                <li><a href="#-proposta-6">Proposta 6</a></li>
+            </ol>
+        </li>
+        <li><a href="#-implementação">Implementação</a>
+            <ol>
+                <li><a href="#-arquivo-problema11hpp">Arquivo `problema11.hpp`</a>
+                    <ul>
+                        <li><a href="#-includes">Includes</a></li>
+                        <li><a href="#-declaração-das-funções">Declaração das funções</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-arquivo-problema11cpp">Arquivo `problema11.cpp`</a>
+                    <ul>
+                        <li><a href="#-funções-de-geração-de-processos-e-arquivos">Funções de Geração de Processos e Arquivos</a></li>
+                        <li><a href="#-outras-funções">Outras Funções</a></li>
+                        <li><a href="#-funções-de-ordenação">Funções de Ordenação</a></li>
+                        <li><a href="#-funções-de-cache">Funções de Cache</a></li>
+                        <li><a href="#-funções-de-limpeza">Funções de Limpeza</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-arquivo-maincpp">Arquivo `main.cpp`</a></li>
+                <li><a href="#-arquivo-gerargráficopy">Arquivo `gerarGrafico.py`</a></li>
+            </ol>
+        </li>
+        <li><a href="#-análise-de-complexidade-de-cada-proposta">Análise de Complexidade de Cada Proposta</a>
+            <ol>
+                <li><a href="#-análise-de-complexidade-da-proposta-1">🧮 Análise de Complexidade da Proposta 1</a>
+                    <ul>
+                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-análise-de-complexidade-da-proposta-2">🧮 Análise de Complexidade da Proposta 2</a>
+                    <ul>
+                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-análise-de-complexidade-da-proposta-3">🧮 Análise de Complexidade da Proposta 3</a>
+                    <ul>
+                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-análise-de-complexidade-da-proposta-4">🧮 Análise de Complexidade da Proposta 4</a>
+                    <ul>
+                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-análise-de-complexidade-da-proposta-5">🧮 Análise de Complexidade da Proposta 5</a>
+                    <ul>
+                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-análise-de-complexidade-da-proposta-6">🧮 Análise de Complexidade da Proposta 6</a>
+                    <ul>
+                        <li><a href="#-cálculo-da-complexidade-total">🔢 Cálculo da Complexidade Total</a></li>
+                    </ul>
+                </li>
+                <li><a href="#-comparação-entre-as-proposta">Comparação entre as Proposta</a>
+                    <ul>
+                        <li><a href="#-proposta-1">Proposta 1</a></li>
+                        <li><a href="#-proposta-2">Proposta 2</a></li>
+                        <li><a href="#-proposta-3">Proposta 3</a></li>
+                        <li><a href="#-proposta-4">Proposta 4</a></li>
+                        <li><a href="#-proposta-5">Proposta 5</a></li>
+                        <li><a href="#-proposta-6">Proposta 6</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li><a href="#-estrutura-de-diretórios">Estrutura de Diretórios</a></li>
         <li><a href="#-como-usar">Como Usar</a></li>
-        <li><a href="#-exemplos">Exemplos</a></li>
-        <li><a href="#-resultados-das-análises">Resultados Das Análises</a></li>
+        <li><a href="#-exemplos">Exemplos</a>
+            <ul>
+                <li><a href="#-apresentação-do-problema">Apresentação do problema</a></li>
+                <li><a href="#-gerando-arquivos-e-processos">Gerando Arquivos e Processos</a></li>
+                <li><a href="#-medição-do-tempo-de-execução-das-propostas">Medição do Tempo de Execução das Propostas</a></li>
+                <li><a href="#-arquivo-outputtxt">Arquivo `output.txt`</a></li>
+                <li><a href="#-arquivo-temposexecuçaocsv">Arquivo `tempos_execução.csv`</a></li>
+                <li><a href="#-gerando-gráfico">Gerando Gráfico</a></li>
+                <li><a href="#-análise-de-resultados">Análise de Resultados</a></li>
+                <li><a href="#-agradecimento-e-dados">Agradecimento e dados</a></li>
+            </ul>
+        </li>
+        <li><a href="#-análises-testes-e-estudos">Análises, Testes e Estudos</a>
+            <ul>
+                <li><a href="#-mesmo-valores-para-quantidade-de-processos-arquivos-linhas-e-arquivos-por-linha">Mesmo valores para quantidade de processos, arquivos, linhas e arquivos por linha</a></li>
+                <li><a href="#-valores-maiores-de-processos-do-que-arquivos-linhas-e-arquivos-por-linha">Valores maiores de processos do que arquivos, linhas e arquivos por linha</a></li>
+                <li><a href="#-valores-maiores-de-arquivos-do-que-processos-linhas-e-arquivos-por-linha">Valores maiores de arquivos do que processos, linhas e arquivos por linha</a></li>
+                <li><a href="#-valores-maiores-de-linhas-do-que-processos-arquivos-e-arquivos-por-linha">Valores maiores de linhas do que processos, arquivos e arquivos por linha</a></li>
+                <li><a href="#-valores-maiores-de-arquivos-por-linha-do-que-processos-arquivos-e-linhas">Valores maiores de arquivos por linha do que processos, arquivos e linhas</a></li>
+            </ul>
+        </li>
+        <li><a href="#-escolha-da-melhor-proposta">Escolha da Melhor Proposta</a>
+            <ul>
+                <li><a href="#-justificativa-para-parar-de-procurar-outras-maneiras"> Justificativa para Parar de Procurar Outras Maneiras</a></li>
+            </ul>
+        </li>
         <li><a href="#-conclusão">Conclusão</a></li>
         <li><a href="#-ambiente-de-compilação">Ambiente de Compilação</a></li>
         <li><a href="#-makefile">MakeFile</a></li>
@@ -33,12 +126,10 @@
     </ol>
 </details>
 
-## 👋 Introdução 
-
+## 🚀 Introdução 
 Este problema foi apresentado através de uma atividade, Prática 1, do professor Michel Pires na disciplina de Algoritmos e Estruturas de Dados I. A atividades Prática 1 é composta por problemas sobre Análise Assintótica e Complexidade Computacional. O chamado Problema 11, consiste inicialmente em fazer o cálculo das somas das raízes quadradas dos números contidos em arquivos referenciados por arquivos de processo. A ideia do professor é fazer com que seus alunos sejam incentivados a explorar as oportunidades de avaliação e melhoria, discutindo essas melhorias e seus possíveis custos operacionais. 
 
-
-### 📋 Descrição do Problema
+### 🔍 Descrição do Problema
 Temos dois tipos principais de arquivos:
 1. **Arquivos de Processos (`P1.txt`, `P2.txt`, ..., `PQ.txt`):** Cada um desses arquivos contém linhas que listam IDs de outros arquivos de dados. Cada linha representa um conjunto de arquivos a serem processados juntos *(< L1, 04, 07, 01, 01, 07, 06, . . . , 03 >)*. 
 2. **Arquivos Referenciados (`A1.txt`, `A2.txt`, ..., `AN.txt`):** Estes arquivos contêm contém 100.000 números de ponto flutuante aleatórios, variando de 1 a 1.000.000 dos quais precisamos calcular a soma das raízes quadradas.
@@ -48,30 +139,29 @@ Para cada linha em cada arquivo de processo, precisamos:
 2. Para cada arquivo referenciado, calcular a soma das raízes quadradas dos números contidos nele.
 3. Acumular esses resultados e escrever a soma no arquivo de saída correspondente.
 
-### 📘 Abordagens
+### 💡 Abordagens
 Para resolver o problema de forma eficiente, foram implementadas seis propostas distintas:
 
-- *Proposta 1:* Nessa proposta, o programa processa cada linha de um processo de forma sequencial, ou seja, ele processa a linha 1, depois a linha 2 e assim por diante até a última linha do processo.
+- <u>**Proposta 1:**</u> Nessa proposta, o programa processa cada linha de um processo de forma sequencial, ou seja, ele processa a linha 1, depois a linha 2 e assim por diante até a última linha do processo.
 
-- *Proposta 2:* Nessa proposta, o programa processa cada linha de um processo e reaproveita a operação de cálculo quando o número do arquivo for o mesmo, ou seja, se um arquivo já foi processado, a soma das raízes quadradas é guardada e utilizada apenas esse resultado, sem a necessidade de calcular tudo de novo, isso para cada processo.
+- <u>**Proposta 2:**</u> Nessa proposta, o programa processa cada linha de um processo e reaproveita a operação de cálculo quando o número do arquivo for o mesmo, ou seja, se um arquivo já foi processado, a soma das raízes quadradas é guardada e utilizada apenas esse resultado, sem a necessidade de calcular tudo de novo, isso para cada processo.
 
-- *Proposta 3:* Nessa proposta, semelhante à segunda, o que muda é que aqui é utilizado uma espécie de cache goblal para todos os processos. Na proposta 2, era calculada e armazenada a soma das raizes de cada arquivo por cada processo, ou seja quando mudava de processo aqueles resultados armazenados eram descartados. Aqui nesta proposta, as somas de cada arquivo é armazenada e mantida mesmo na troca de um processo para outro.
+- <u>**Proposta 3:**</u> Nessa proposta, semelhante à segunda, o que muda é que aqui é utilizado uma espécie de cache goblal para todos os processos. Na proposta 2, era calculada e armazenada a soma das raizes de cada arquivo por cada processo, ou seja quando mudava de processo aqueles resultados armazenados eram descartados. Aqui nesta proposta, as somas de cada arquivo é armazenada e mantida mesmo na troca de um processo para outro.
 
-- *Proposta 4:* Nessa proposta, utilizando a ideia da proposta 3, e buscando com que o tempo de execução seja ainda menor, foi implementado um algoritmo de ordenação quicksort para ordenar cada processo de acordo com a quantidade de arquivos por linha, fazendo com que a linha com mais arquivos seja processada primeiro, para que o reaproveitamento de cálculos seja mais eficiente.
+- <u>**Proposta 4:**</u> Nessa proposta, utilizando a ideia da proposta 3, e buscando com que o tempo de execução seja ainda menor, foi implementado um algoritmo de ordenação quicksort para ordenar cada processo de acordo com a quantidade de arquivos por linha, fazendo com que a linha com mais arquivos seja processada primeiro, para que o reaproveitamento de cálculos seja mais eficiente.
 
-- *Proposta 5:* Nessa proposta, semelhante à proposta 3, foi implementado um cache de arquivos, onde o programa armazena os resultados de cada arquivo em um vetor de cache, fazendo com que o reaproveitamento de cálculos seja mais eficiente. A diferença desta proposta para a proposta 3 é que aqui, o programa armazena os resultados de cada arquivo em um vetor de cache em ordem crescente, e quando um arquivo é processado, o programa busca no vetor de cache o resultado daquele arquivo usando busca binária. Se o arquivo não estiver no cache, o programa calcula a soma das raízes quadradas e armazena no cache.
+- <u>**Proposta 5:**</u> Nessa proposta, semelhante à proposta 3, foi implementado um cache de arquivos, onde o programa armazena os resultados de cada arquivo em um vetor de cache, fazendo com que o reaproveitamento de cálculos seja mais eficiente. A diferença desta proposta para a proposta 3 é que aqui, o programa armazena os resultados de cada arquivo em um vetor de cache em ordem crescente, e quando um arquivo é processado, o programa busca no vetor de cache o resultado daquele arquivo usando busca binária. Se o arquivo não estiver no cache, o programa calcula a soma das raízes quadradas e armazena no cache.
 
-- *Proposta 6:* Nessa proposta, semelhante à proposta 5, é calculada a soma das raízes quadradas de todos os arquivos antes de olhar para os processos e armazenada em um vetor de cache. Quando um arquivo é processado, o programa pega no vetor de cache o resultado daquele arquivo sem a necessidade de fazer uma busca. Se o arquivo não estiver no cache, o programa calcula a soma das raízes quadradas e armazena no cache.
+- <u>**Proposta 6:**</u> Nessa proposta, semelhante à proposta 5, é calculada a soma das raízes quadradas de todos os arquivos antes de olhar para os processos e armazenada em um vetor de cache. Quando um arquivo é processado, o programa pega no vetor de cache o resultado daquele arquivo sem a necessidade de fazer uma busca. Se o arquivo não estiver no cache, o programa calcula a soma das raízes quadradas e armazena no cache.
 
 ### 🎯 Objetivo
-
 O principal objetivo deste projeto é demonstrar como diferentes técnicas de otimização podem ser aplicadas para reduzir o tempo de processamento e aumentar a eficiência na leitura e cálculo de grandes volumes de dados. Através da comparação das seis abordagens, busca-se identificar a mais eficiente e escalável, oferecendo uma solução prática para problemas semelhantes em contextos de processamento intensivo de dados.
 
 
 ## 🛠️ Desenvolvimento
 O desenvolvimento se iniciou na primeira proposta onde a ideia era apenas fazer o cálculo das somas das raízes sem pensar em nenhuma eficiência ou custeio. Esta proposta serviu como base para entender o problema e implementar a solução de forma direta.
 
-### 📌 Proposta 1
+### 1️⃣ Proposta 1
 Na primeira abordagem, o programa processa cada linha de um processo de forma sequencial:
 1. Ler os IDs dos arquivos referenciados.
 2. Para cada arquivo, calcular a soma das raízes quadradas dos números contidos nele.
@@ -79,28 +169,28 @@ Na primeira abordagem, o programa processa cada linha de um processo de forma se
 
 Depois, uma proposta apresentada pelo próprio professor, de reaproveitar a operação de cálculo quando o número do arquivo for o mesmo. Assim foi feita na proposta 2.
 
-### 📌 Proposta 2
+### 2️⃣ Proposta 2
 A segunda proposta introduziu um mecanismo para otimizar o tempo de processamento:
 1. Implementar um armazenamento para os resultados das somas das raízes quadradas de cada arquivo processado.
 2. Reutilizar os resultados armazenados para arquivos já processados, evitando cálculos redundantes, em cada processo.
 
 Após ver a descrepante diferença entre o tempo de execução da proposta 1 e a proposta 2, pude pensar em uma maneira ainda melhor de otimizar esse tempo, pensando da mesma forma que na proposta 2. Na proposta anterior, a cada processo tinha um cache que armazenava as somas dos arquivos calculados, porém quando ia ter a troca de processo esse cache era apagado e um novo era criando, então foi implementado agora uma espécie de cache global, para que todos os processos que iam ser calculados pudessem ter acesso. 
 
-### 📌 Proposta 3
+### 3️⃣ Proposta 3
 A terceira proposta aprimorou a reutilização dos cálculos:
 1. Manter os resultados das somas das raízes quadradas dos arquivos processados, mesmo na troca de processos.
 2. Melhorar a busca dos resultados armazenados no vetor, tornando o retorno dos valores mais eficiente.
 
 Vendo agora uma maior eficiência e um melhor desempenho, pensei em ainda mais melhorar. A ideia era fazer com que fosse calculado uma grande quantidade de arquivos inicialmente para que já fosse armazenados para serem usados posteriormente. Então foi escolhido o método de ordenação QuickSort para ordenar as linhas dos processos. 
 
-### 📌 Proposta 4
+### 4️⃣ Proposta 4
 A quarta proposta introduziu a ordenação das linhas dos processos para maximizar a eficiência:
 1. Utilizar o algoritmo de ordenação quicksort para ordenar as linhas de cada processo pela quantidade de arquivos.
 2. Processar primeiramente as linhas com mais arquivos, otimizando o reaproveitamento dos cálculos.
 
 Após implementar essa ordenação e observar uma pequena melhoria no tempo de execução em alguns caso, a próxima etapa foi pensar em como armazenar esses resultados de forma mais eficiente, permitindo um acesso rápido e fácil durante o processamento. Então foi pensado apartir da proposta 3, uma maneira melhor de encontrar mais rápido oas dados no cache. Assim, a adição de novos itens no cache foi feita de forma crescente e para buscá-los foi implementado a busca binária. 
 
-### 📌 Proposta 5
+### 5️⃣ Proposta 5
 A quinta proposta implementou uma ordenação no cache de arquivos para armazenamento e uma busca binária mais eficiente:
 1. Armazenar os resultados das somas das raízes quadradas de cada arquivo em um vetor de cache em ordem crescente.
 2. Utilizar busca binária para encontrar rapidamente os resultados no cache.
@@ -108,7 +198,7 @@ A quinta proposta implementou uma ordenação no cache de arquivos para armazena
 
 Essa abordagem de cache mostrou-se altamente eficaz, reduzindo ainda mais o tempo de execução do programa. No entanto, ainda havia espaço para otimizações adicionais. Pensando na hipótese de não fazer uma busca, foi pensado em uma nova proposta que inicialmente calculava as somas das raízes quadradas de todos os arquivos antes de fazer os processamentos. 
 
-### 📌 Proposta 6
+### 6️⃣ Proposta 6
 A sexta e última proposta combinou as melhorias anteriores com um cache global:
 1. Calcular a soma das raízes quadradas de todos os arquivos e armazenar em um vetor de cache.
 2. Aqui não há a necessidade de fazer algumas busca, ou calcular caso não tenha as somas no cache que todas já foram calculadas, e ele apenas pega o valor em um lugar da memória já pré-destinado.
@@ -118,8 +208,7 @@ Com essa última proposta, conseguimos alcançar um alto nível de eficiência e
 O desenvolvimento dessas propostas permitiu explorar diversas técnicas de otimização, desde a abordagem sequencial simples até o uso de algoritmos avançados de busca e ordenação. Cada proposta foi projetada para melhorar o desempenho e a eficiência do processamento dos arquivos, fornecendo uma base sólida para a aplicação de técnicas de análise assintótica e complexidade computacional.
 
 
-## 📝 Implementação
-
+## 🧰 Implementação
 Nesta seção, serão detalhadas as principais partes do código-fonte, incluindo a organização dos arquivos e as funções implementadas em cada um deles. Serão abordados os seguintes arquivos:
 
 - `problema11.hpp`
@@ -127,11 +216,10 @@ Nesta seção, serão detalhadas as principais partes do código-fonte, incluind
 - `main.cpp`
 - `gerarGrafico.py`
 
-### Arquivo `problema11.hpp`
-
+### 📁 Arquivo `problema11.hpp`
 Arquivos com extensão `.hpp` são comumente usados em C++ para declarar classes, funções e variáveis que podem ser compartilhadas entre diferentes arquivos de código-fonte. No caso deste projeto, o arquivo `problema11.hpp` contém as declarações das funções principais utilizadas no programa.
 
-#### Includes
+#### 📎 Includes
 Aqui, são incluídas diversas bibliotecas que fornecem funcionalidades essenciais para o programa:
 
 - `iostream`: Essa biblioteca é utilizada para entrada e saída padrão, permitindo a interação do usuário com o programa por meio do terminal.
@@ -160,15 +248,15 @@ Aqui, são incluídas diversas bibliotecas que fornecem funcionalidades essencia
 
 - `filesystem`: Introduzido no C++17, esta biblioteca oferece suporte para operações de sistema de arquivos, como manipulação de caminhos de arquivo e iteração de diretórios.
 
-#### Declaração das funções
+#### 📄 Declaração das funções
 Aqui são declaradas as funções que serão utilizadas no programa. As funções são declaradas sem detalhes sobre suas implementações, pois serão discutidas em detalhes posteriormente em seus respectivos arquivos.
 
 
-### Arquivo `problema11.cpp`
+### 📁 Arquivo `problema11.cpp`
 
 Este arquivo contém as implementações das funções declaradas em `problema11.hpp`.
 
-#### Funções de Geração de Processos e Arquivos
+#### 🔨 Funções de Geração de Processos e Arquivos
 
 - `gerarProcessosEArquivos`: Esta função gera processos e arquivos com base nos parâmetros fornecidos.
 - `gerarArquivos`: Gera arquivos com o nome especificado.
@@ -178,7 +266,7 @@ Este arquivo contém as implementações das funções declaradas em `problema11
 
 - `proposta1`, `proposta2`, `proposta3`, `proposta4`, `proposta5`, `proposta6`: Implementações das diferentes propostas de solução para o problema. Cada uma dessas funções lida com uma abordagem específica para processar conjuntos de dados.
 
-#### Outras Funções
+#### ⚙️ Outras Funções
 
 - `extrairArquivosPorLinha`: Extrai números de arquivo de uma linha de texto.
 - `medindoTempoDeExecucaoDeCadaProposta`: Mede o tempo de execução de cada proposta.
@@ -186,20 +274,20 @@ Este arquivo contém as implementações das funções declaradas em `problema11
 - `calculandoASomaDasRaizQuadradaDeUmArquivo`: Calcula a soma das raízes quadradas dos números em um arquivo.
 - `escreverResultadoNoArquivoDeSaida`: Escreve o resultado em um arquivo de saída.
 
-#### Funções de Ordenação
+#### 🔢 Funções de Ordenação
 
 - `trocar`, `particao`, `quickSort`: Implementação do algoritmo QuickSort para ordenação de matrizes.
 
-#### Funções de Cache
+#### 💾 Funções de Cache
 
 - `buscarNoCache`, `colocarCacheOrdenado`: Gerencia um cache de arquivos para otimização de acesso.
 
-#### Funções de Limpeza
+#### 🗑️ Funções de Limpeza
 
 - `limparPastas`: Limpa pastas usadas durante a execução.
 
 
-#### Arquivo `main.cpp`
+### 📁 Arquivo `main.cpp`
 
 O arquivo `main.cpp` é o ponto de entrada principal do programa. Abaixo estão as principais funções e seu propósito:
 
@@ -219,7 +307,7 @@ O arquivo `main.cpp` é o ponto de entrada principal do programa. Abaixo estão 
 
 - `int main()`: Esta é a função principal que inicia a execução do programa. Ela chama outras funções para realizar tarefas específicas, como apresentar uma introdução, gerar processos e arquivos, medir o tempo de execução das propostas de solução, gerar gráficos e realizar análises de resultados.
 
-#### Arquivo `gerarGrafico.py`
+### 📁 Arquivo `gerarGrafico.py`
 
 O arquivo `gerarGrafico.py` é um script Python responsável por gerar um gráfico do desempenho das diferentes propostas de solução implementadas no programa. O script tem como objetivo visualizar de forma gráfica o desempenho das diferentes propostas de solução em relação ao tempo de execução. O script lê os dados contidos no arquivo CSV gerado pelo programa principal, que contém informações sobre o tempo de execução de cada proposta para diferentes quantidades de conjuntos de processos. 
 
@@ -314,10 +402,10 @@ O script gerarGrafico.py utiliza as bibliotecas pandas e plotly.graph_objects pa
     ```
 
 
-## Análise de Complexidade de Cada Proposta
+## 📊 Análise de Complexidade de Cada Proposta
 Nesta seção, abordaremos a análise detalhada da complexidade de cada proposta implementada para resolver o problema apresentado. Exploraremos cada abordagem, destacando suas vantagens e limitações em termos de eficiência computacional.
 
-### Análise de Complexidade da Proposta 1:
+### 🧮 Análise de Complexidade da Proposta 1:
 
 1. **Limpar Arquivo de Saída:**
     ```cpp
@@ -366,7 +454,7 @@ Nesta seção, abordaremos a análise detalhada da complexidade de cada proposta
     ```
     - Escrever um resultado no arquivo de saída é uma operação *O(1)*, mas é feita *qntConjuntosProcessos* vezes.
 
-#### Cálculo da Complexidade Total:
+#### 🔢 Cálculo da Complexidade Total:
 
 Sabendo que:
 - **Q**: Número de conjuntos de processos.
@@ -387,7 +475,7 @@ Como isso é feito para *Q* conjuntos de processos, assim, a complexidade comput
 **O(Q * L * A * N)**.
 
 
-### Análise de Complexidade da Proposta 2:
+### 🧮 Análise de Complexidade da Proposta 2:
 
 1. **Limpar Arquivo de Saída:**
     ```cpp
@@ -460,7 +548,7 @@ Como isso é feito para *Q* conjuntos de processos, assim, a complexidade comput
     ```
     - Complexidade: *O(1)*.
 
-#### Complexidade Total:
+#### 🔢 Cálculo da Complexidade Total:
 
 Vamos agora compilar as complexidades individuais para determinar a complexidade total da Proposta 2.
 
@@ -475,7 +563,7 @@ A complexidade total pode ser expressa como:
 Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*, a complexidade pode ser aproximada por:
 **O(N * L * A * (C + K))**
 
-### Análise de Complexidade da Proposta 3:
+### 🧮 Análise de Complexidade da Proposta 3:
 
 1. **Limpar Arquivo de Saída:**
     ```cpp
@@ -548,7 +636,7 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
     ```
     - Complexidade: *O(1)*.
 
-#### Complexidade Total:
+#### 🔢 Cálculo da Complexidade Total:
 
 Vamos agora compilar as complexidades individuais para determinar a complexidade total da Proposta 3.
 
@@ -564,7 +652,7 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
 **O(N * L * A * (C + K))**
 
 
-### Análise de Complexidade da Proposta 4:
+### 🧮 Análise de Complexidade da Proposta 4:
 
 1. **Limpar Arquivo de Saída:**
     ```cpp
@@ -650,7 +738,7 @@ log L)*.
     ```
     - Complexidade: *O(1)*.
 
-#### Complexidade Total:
+#### 🔢 Cálculo da Complexidade Total:
 
 Vamos agora compilar as complexidades individuais para determinar a complexidade total da Proposta 4.
 
@@ -668,7 +756,7 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
 **O(N * (L log L + L * A * (C + K)))**
 
 
-### Análise de Complexidade da Proposta 5:
+### 🧮 Análise de Complexidade da Proposta 5:
 
 1. **Limpar Arquivo de Saída:**
     ```cpp
@@ -727,7 +815,7 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
     ```
     - Complexidade: *O(1)*.
 
-#### Complexidade Total:
+#### 🔢 Cálculo da Complexidade Total:
 
 Vamos agora compilar as complexidades individuais para determinar a complexidade total da Proposta 5.
 
@@ -745,7 +833,7 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
 Entre *logQ*, *K*, e *Q*, geralmente *Q* (número de arquivos) será maior, considerando que *logQ* cresce mais lentamente e *K* depende do tamanho dos arquivos, a complexidade pode ser aproximada por:
 **O(Q + N * L * A * Q)**
 
-### Análise de Complexidade da Proposta 6:
+### 🧮 Análise de Complexidade da Proposta 6:
 
 1. **Limpar Arquivo de Saída:**
     ```cpp
@@ -813,7 +901,7 @@ Entre *logQ*, *K*, e *Q*, geralmente *Q* (número de arquivos) será maior, cons
     ```
     - Complexidade: *O(1)*.
 
-#### Complexidade Total:
+#### 🔢 Cálculo da Complexidade Total:
 
 Vamos agora compilar as complexidades individuais para determinar a complexidade total da Proposta 6.
 
@@ -830,29 +918,29 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
 **O(Q * K + N * L * A)**
 
 
-### Comparação entre as Propostas:
+### 📈 Comparação entre as Propostas:
 
-#### Proposta 1:
+#### 1️⃣ Proposta 1:
 - Complexidade: *O(Q * L * M * N)*.
 - Desempenho: Recalcula a soma das raízes quadradas para cada arquivo sempre que referenciado.
 
-#### Proposta 2:
+#### 2️⃣ Proposta 2:
 - Complexidade: *O(N * L * A * (C + K))*.
 - Desempenho: Utiliza cache local ao arquivo de cada processo, recalculando apenas se o arquivo não estiver no cache. Isso adiciona um fator *O(C)* para a busca no cache, mas elimina múltiplas leituras e cálculos para o mesmo arquivo, que diminui o valor de *O(K)*.
 
-#### Proposta 3:
+#### 3️⃣ Proposta 3:
 - Complexidade: *O(N * L * A * (C + K))*.
 - Desempenho: Utiliza um cache global que persiste entre os arquivos de processo, evitando recalcular a soma das raízes quadradas de arquivos já processados anteriormente em outros processos.
 
-#### Proposta 4:
+#### 4️⃣ Proposta 4:
 - Complexidade: *O(N * (L log L + L * A * (C + K)))*.
 - Desempenho: Ordena as linhas antes de processá-las, colocando a linha que tem mais processo primeiro, usando QuickSort, o que pode melhorar a localidade de referência e eficiência do cache, mas adiciona o custo de ordenação *O(L log L)*.
 
-#### Proposta 5:
+#### 5️⃣ Proposta 5:
 - Complexidade: *O(Q + N * L * A * Q)*.
 - Desempenho: Utiliza um cache global e a busca binária que acelera a recuperação do cache, inserção ordenada mantém o cache eficiente.
 
-#### Proposta 6:
+#### 6️⃣ Proposta 6:
 - Complexidade: *O(Q * K + N * L * A)*
 - Desempenho: Pré-calcula e armazena todas as somas antes de processar, excelente se a memória não é um problema.
 
@@ -918,7 +1006,7 @@ Esta estrutura de diretórios facilita a organização do projeto e a localizaç
 ## 📋 Exemplos
 Nesta seção, serão apresentados exemplos de execução do programa, demonstrando passo a passo como cada proposta de processamento de conjuntos de processos é aplicada e depois vamos analisar os resultados obtidos.
 
-### Apresentação do problema
+### 📑 Apresentação do problema
 Assim que iniciamos o programa temos uma explicação do problema: 
 
 <p align="center">
@@ -928,7 +1016,7 @@ Assim que iniciamos o programa temos uma explicação do problema:
     </figure>
 </p>
 
-### Gerando Arquivos e Processos
+### 📑 Gerando Arquivos e Processos
 Aqui começa a execução real do programa, onde ele pede as informações de quantos arquivos irá gerar, quantos processos, até quantas linhas terá cada processo, até quantos arquivos terá cada linha de cada processo e por último quantos conjuntos de processos será analisados e quais seus respectivos tamanhos. Veja: 
 
 <p align="center">
@@ -938,7 +1026,7 @@ Aqui começa a execução real do programa, onde ele pede as informações de qu
     </figure>
 </p>
 
-### Medição do Tempo de Execução das Propostas 
+### ⏱️ Medição do Tempo de Execução das Propostas 
 Depois, já se inicia a contagem de tempo da execução de cada proposta com a quantidade de conjuntos de processos que vc selecionou. 
 
 <p align="center">
@@ -948,7 +1036,7 @@ Depois, já se inicia a contagem de tempo da execução de cada proposta com a q
     </figure>
 </p>
 
-### Arquivo `output.txt`
+### 📄 Arquivo `output.txt`
 No arquivo `output.txt`, é guardado os valores das subtração das somas das raízes quadradas de cada linha de cada processo. Veja um exemplo da saída desse arquivo:
 
 ```txt
@@ -959,7 +1047,7 @@ No arquivo `output.txt`, é guardado os valores das subtração das somas das ra
     -66607134
 ```
 
-### Arquivo `tempos_execução.csv`
+### 📄 Arquivo `tempos_execução.csv`
 É guardado os tempos de execução no arquivo `tempos_execucao.cvs`, para que possa ser usado depois para fazer a plotagem do gráfico. 
 ```csv
     QuantidadeConjuntos,Proposta1,Proposta2,Proposta3,Proposta4,Proposta5,Proposta6
@@ -970,7 +1058,7 @@ No arquivo `output.txt`, é guardado os valores das subtração das somas das ra
     5,0.156161,0.067196,0.018753,0.0184915,0.0192842,0.0194667
 ```
 
-### Gerando Gráfico
+### 📊 Gerando Gráfico
 Depois de salvar os dados no arquvivo `tempos_execução.csv`, é feita a plotagem do gráfico em uma página do navegador. 
 
 <p align="center">
@@ -1042,7 +1130,7 @@ Depois que terminar de visualizar o gráfico, volte para o programa para continu
     </figure>
 </p>
 
-### Análise de Resultados 
+### 📈 Análise de Resultados 
 Nesta parte é feito um pequeno estudo e explicação de cada proposta, apresentando como é esperado o desempenho de cada uma: 
 
 <p align="center">
@@ -1079,7 +1167,7 @@ E por fim tem a conclusão das análises:
     </figure>
 </p>
 
-### Agradecimento e dados
+### 🙏 Agradecimento e dados
 
 No final, é feito o agradecimento e mostra alguns dados:
 
@@ -1102,7 +1190,7 @@ Foram feitos alguns testes para que possamos ver o comportamento de cada propost
 
 É importante lembrar que o números de linhas de cada processo é gerado aleatóriamente com valores de 1 até o valor que estiver digitado, isso acontece tbm para a quantidade de arquivos por linha. Vamos ver que exemplo disso logo abaixo. 
 
-###  Mesmo valores para quantidade de processos, arquivos, linhas e arquivos por linha
+### 🔼🔽  Mesmo valores para quantidade de processos, arquivos, linhas e arquivos por linha
 Vamos fazer com 4 valores diferentes (1, 10, 50, 100).. 
 
 - **Primeiro teste (1):** Primeiro colocamos o valor que nós queremos: 
@@ -1228,7 +1316,7 @@ Vamos fazer com 4 valores diferentes (1, 10, 50, 100)..
 
 Com todos os valores iguais vemos que a cada vez q aumentamos as entradas as Propostas 5 e 6 se destacam. Podemos observar principalmente quando colocamos a entrada (100) com vários conjuntos de processos diferentes, percebemos que essas propostas, mesmo que aumentasse a quantidade de conjuntos tiveram uma diferença muito baixa. Isso já nos mostra uma boa eficiência e um destaque delas em relação as outras propostas. Vamos ver outros testes: 
 
-### Valores maiores de processos do que arquivos, linhas e arquivos por linha
+### 🔼🔽 Valores maiores de processos do que arquivos, linhas e arquivos por linha
 Aqui vamos fazer com 3 testes: 
 
 - **Primeiro teste (50 processos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
@@ -1332,7 +1420,7 @@ Aqui vamos fazer com 3 testes:
 
 Aqui, conseguimos ver que quantidade de processos não interfiriu tanto no que tinhamos observado nos testes anteriores. Vemos que tem uma grande discrepância da Proposta 1 com as demais, o mesmo com a Proposta 2. Depois as outras propostas tem seus valores parecidos, porém quanto mais vamos aumentando os valores, as Propostas 3 e 4 vão se distanciando das Propostas 5 e 6, e entre todas a Proposta 6 se mostra com mais eficiência. 
 
-### Valores maiores de arquivos do que processos, linhas e arquivos por linha
+### 🔼🔽 Valores maiores de arquivos do que processos, linhas e arquivos por linha
 Aqui vamos fazer com 3 testes: 
 
 - **Primeiro teste (50 arquivos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
@@ -1436,7 +1524,7 @@ Aqui vamos fazer com 3 testes:
 
 Já era esperado que a Proposta 6 não seria uma boa opção para esse caso, pois esta proposta calcula todos os arquivos para depois olhar quais seriam necessários e exigidos pelos processos. Aqui, neste caso, aumentamos o número de arquivos, e mantemos os outros valores baixo e isso fez com que muitos dos arquivos não fossem nem utilizados, isso fez com que a Proposta 6 não se destacasse como uma boa opção.
 
-### Valores maiores de linhas do que processos, arquivos e arquivos por linha
+### 🔼🔽 Valores maiores de linhas do que processos, arquivos e arquivos por linha
 Aqui vamos fazer com 3 testes: 
 
 - **Primeiro teste (50 linhas, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
@@ -1549,7 +1637,7 @@ Aqui vamos fazer com 3 testes:
 Analisando bem a Proposta 1 piorou neste caso pelo fato de ela analisar um arquivo de cada vez sem armazenar nenhuma soma e cada linha tem vários arquivos, e quando colocamos valores muito grandes na quantidade de linhas, faz com que a quantidade de arquivos aumente muito, mesmo que eles sejam repetidos várias vezes, esta proposta calcula todos. 
 
 
-### Valores maiores de arquivos por linha do que processos, arquivos e linhas
+### 🔼🔽 Valores maiores de arquivos por linha do que processos, arquivos e linhas
 Aqui vamos fazer com 3 testes: 
 
 - **Primeiro teste (50 arquivos por linha, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
@@ -1663,41 +1751,39 @@ Aqui, a Proposta 1 tem um péssimo desempenho pelo mesmo motivo do teste anterio
 
 **OBSERVAÇÃO:** Fizemos aqui apenas testes com os valores de entrada, sem analisar exatamente os arquivos e processos que estavam sendo gerados. 
 
-## Escolha da melhor proposta 
+## 🔍 Escolha da melhor proposta 
 Após os testes vemos que cada uma das propostas apresentadas oferece vantagens e desvantagens, e a escolha da melhor depende de vários fatores, como o tipo de arquivos, a estrutura dos dados e os padrões de acesso. Aqui estão algumas considerações finais sobre o desempenho de cada proposta:
 
-**PROPOSTA 1: Processamento Sequencial**
-
+<u>**PROPOSTA 1: Processamento Sequencial**</u>
 - **Descrição:** Cada linha de um arquivo de processo é lida e processada de forma sequencial, calculando a soma das raízes quadradas dos números nos arquivos referenciados.
 - **Limitação:** Alta redundância, pois cada arquivo referenciado é processado repetidamente sem aproveitamento de cálculos anteriores, resultando em uma significativa ineficiência.
 
-**PROPOSTA 2: Reaproveitamento de Cálculos por Processo**
-
+<u>**PROPOSTA 2: Reaproveitamento de Cálculos por Processo**</u>
 - **Descrição:** Introduz um cache para armazenar a soma das raízes quadradas de arquivos já processados dentro de um mesmo processo.
 - **Melhoria:** Reduz a redundância dentro de um único processo, evitando recalcular somas de arquivos já processados.
 - **Limitação:** O cache é descartado ao final de cada processo, não aproveitando os cálculos entre processos diferentes.
 
-**Proposta 3: Cache Global**
+<u>**PROPOSTA 3: Cache Global**</u>
 - **Descrição:** Implementa um cache global que armazena os resultados das somas das raízes quadradas entre todos os processos.
 - **Melhoria:** Aproveita os cálculos realizados entre diferentes processos, aumentando a eficiência global.
 - **Limitação:** Embora o reaproveitamento de cálculos seja maximizado, a busca no cache pode ser ineficiente se não for otimizada.
 
-**PROPOSTA 4: Ordenação e Reaproveitamento**
+<u>**PROPOSTA 4: Ordenação e Reaproveitamento**</u>
 - **Descrição:** Ordena as linhas de cada processo com base no número de arquivos referenciados antes de iniciar o processamento.
 - **Melhoria:** Processa primeiro as linhas com mais arquivos referenciados, otimizando o reaproveitamento dos cálculos iniciais e melhorando a eficiência de cache.
 - **Limitação:** A complexidade adicional da ordenação pode introduzir overhead, e a eficiência depende da distribuição dos dados. 
 
-**PROPODTA 5: Cache com Busca Binária**
+<u>**PROPOSTA 5: Cache com Busca Binária**</u>
 - **Descrição:** Utiliza um vetor de cache ordenado para armazenar resultados e implementa busca binária para recuperação eficiente dos valores já calculados.
 - **Melhoria:** A busca binária permite uma recuperação muito mais rápida dos valores no cache, otimizando significativamente o tempo de execução.
 - **Limitação:** A manutenção do vetor ordenado e a inserção de novos valores podem introduzir alguma complexidade adicional.
 
-**Proposta 6: Preprocessamento Completo com Cache**
+<u>**PROPOSTA 6: Preprocessamento Completo com Cache**</u>
 - **Descrição:** Pré-calcula a soma das raízes quadradas de todos os arquivos antes de processar os arquivos de processo, armazenando os resultados em um vetor de cache.
 - **Melhoria:** Elimina completamente a necessidade de calcular somas durante o processamento dos arquivos de processo, pois todos os resultados estão pré-computados e disponíveis de forma imediata.
 - **Limitação:** Requer um grande uso de memória para armazenar todos os resultados e um tempo inicial de processamento considerável para calcular todas as somas, mas este tempo é compensado pela eficiência do processamento subsequente, e em casos que não são usados todos os arquivos que foram calculados.
 
-### Justificativa para Parar de Procurar Outras Maneiras
+### ✅ Justificativa para Parar de Procurar Outras Maneiras
 Após a implementação da Proposta 6, a análise dos tempos de execução e da eficiência revelou que:
 
 1. **Eficiência Alta Alcançada:** O tempo de execução para processar cada linha dos arquivos de processo foi drasticamente reduzido devido ao pré-cálculo e armazenamento eficiente das somas das raízes quadradas. A busca no vetor de cache pré-calculado é extremamente rápida, praticamente eliminando o tempo de processamento repetitivo.
@@ -1722,8 +1808,7 @@ Em conclusão, o processo de implementação e análise dessas propostas nos ens
 Essa experiência reforçou a importância de uma análise cuidadosa e a realização de testes práticos ao desenvolver soluções computacionais. O processo de avaliação não só ofereceu uma compreensão mais profunda das técnicas estudadas, mas também destacou a necessidade de adaptação às especificidades de cada problema. Através deste estudo, ficou claro que não existe uma solução universalmente superior, e a escolha da melhor proposta depende das características particulares de cada aplicação.
 
 
-## 🔨 Ambiente de Compilação
-
+## 🔧 Ambiente de Compilação
 A seguir estão os detalhes do ambiente de compilação onde o programa foi executado:
 
 | Componente      | Detalhes                          |
