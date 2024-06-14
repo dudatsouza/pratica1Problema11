@@ -5,12 +5,9 @@
 #include <fstream>
 #include <ostream>
 #include <string>
-#include <ctime>
 #include <vector>
 #include <chrono>
-#include <algorithm> 
 #include <cmath>
-#include <map>
 #include <random>
 #include <cstdlib>
 #include <filesystem>

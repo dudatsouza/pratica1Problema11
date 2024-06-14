@@ -1,8 +1,5 @@
 # 🗃️ Prática 1 - Problema 11
 
-<!-- -reler todo o README
-     -conferir os includes -->
-
 <div align="center">
    <img align="center" height="20px" width="80px" src="https://img.shields.io/badge/Ubuntu-orange?logo=ubuntu">
    <img align="center" height="20px" width="80px" src="https://img.shields.io/badge/VS%20Code-blue?logo=visual%20studio%20code"/>
@@ -165,13 +162,12 @@ Para resolver o problema de forma eficiente, foram implementadas seis propostas 
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 ### 🎯 Objetivo
-O principal objetivo deste projeto é demonstrar como diferentes técnicas de otimização podem ser aplicadas para reduzir o tempo de processamento e aumentar a eficiência na leitura e cálculo de grandes volumes de dados. Através da comparação das seis abordagens, busca-se identificar a mais eficiente e escalável, oferecendo uma solução prática para problemas semelhantes em contextos de processamento intensivo de dados.
+O principal objetivo deste projeto é explorar as oportunidades de avaliação e melhoria, discutindo essas melhorias e seus possíveis custos operacionais, além de demonstrar como diferentes técnicas de otimização podem ser aplicadas para reduzir o tempo de processamento e aumentar a eficiência na leitura e cálculo de grandes volumes de dados. Através da comparação das seis abordagens, busca-se identificar a mais eficiente e escalável, oferecendo uma solução prática para problemas semelhantes em contextos de processamento intensivo de dados.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 
 ## 🛠️ Desenvolvimento
 O desenvolvimento se iniciou na primeira proposta onde a ideia era apenas fazer o cálculo das somas das raízes sem pensar em nenhuma eficiência ou custeio. Esta proposta serviu como base para entender o problema e implementar a solução de forma direta.
-<p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 ### 1️⃣ Proposta 1
 Na primeira abordagem, o programa processa cada linha de um processo de forma sequencial:
@@ -249,17 +245,11 @@ Aqui, são incluídas diversas bibliotecas que fornecem funcionalidades essencia
 
 - `string`: Oferece suporte para manipulação de strings, permitindo a criação, manipulação e processamento de strings de caracteres.
 
-- `ctime`: Esta biblioteca fornece funções para manipulação de tempo e data, como obter a hora atual e converter tempo em representações de cadeia de caracteres.
-
 - `vector`: Fornece uma implementação de vetor dinâmico em C++, permitindo a criação de arrays dinâmicos que podem crescer e diminuir de tamanho conforme necessário.
 
 - `chrono`: Oferece suporte para medição de tempo de forma precisa, permitindo medir a duração de operações ou intervalos de tempo.
 
-- `algorithm`: Esta biblioteca fornece uma variedade de funções para operações em sequências de elementos, como ordenação, busca e manipulação de elementos.
-
 - `cmath`: Oferece funções matemáticas comuns, como operações aritméticas, funções trigonométricas e funções exponenciais.
-
-- `map`: Fornecendo um mapeamento associativo entre chaves e valores, a biblioteca `map` permite armazenar pares chave-valor e acessar os valores associados às chaves de forma eficiente.
 
 - `random`: Fornece funções e classes para geração de números pseudoaleatórios, úteis em simulações e algoritmos que requerem aleatoriedade controlada.
 
@@ -425,7 +415,7 @@ O script gerarGrafico.py utiliza as bibliotecas pandas e plotly.graph_objects pa
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 ## 📊 Análise de Complexidade de Cada Proposta
-Nesta seção, abordaremos a análise detalhada da complexidade de cada proposta implementada para resolver o problema apresentado. Exploraremos cada abordagem, destacando suas vantagens e limitações em termos de eficiência computacional.
+Para entendermos melhor cada o comportamento de cada uma das propostas, vamos analisar a complexidade para que possamos chegar em uma conclusão:
 
 ### 🧮 Análise de Complexidade da Proposta 1:
 
@@ -530,7 +520,7 @@ Como isso é feito para *Q* conjuntos de processos, assim, a complexidade comput
     ```cpp
     extrairArquivosPorLinha(linha, arquivosPorLinha);
     ```
-    - Complexidade: *O(M)*, onde *M* é o número de caracteres na linha.
+    - Complexidade: *O(A)*, onde *A* é o número de caracteres na linha.
 
 6. **Inicialização de Cache:**
     ```cpp
@@ -579,7 +569,7 @@ Vamos agora compilar as complexidades individuais para determinar a complexidade
 
 - O loop externo itera *N* vezes.
 - Para cada iteração do loop externo, temos um loop que processa *L* linhas.
-- Para cada linha, extraímos arquivos, o que tem uma complexidade *O(M)*, e iteramos sobre cada arquivo *A*.
+- Para cada linha, extraímos arquivos, o que tem uma complexidade *O(A)*, e iteramos sobre cada arquivo *A*.
 - Para cada arquivo, primeiro realizamos uma busca no cache que tem complexidade *O(C)*. Se não for encontrado no cache, calculamos a soma das raízes quadradas dos números, o que tem uma complexidade *O(K)*.
 
 A complexidade total pode ser expressa como:
@@ -953,7 +943,7 @@ Assumindo que *M* e *K* são relativamente pequenos comparados a *N*, *L*, e *A*
 ### 📈 Comparação entre as Propostas:
 
 #### 1️⃣ Proposta 1:
-- Complexidade: *O(Q * L * M * N)*.
+- Complexidade: *O(Q * L * A * N)*.
 - Desempenho: Recalcula a soma das raízes quadradas para cada arquivo sempre que referenciado.
 
 #### 2️⃣ Proposta 2:
@@ -1039,7 +1029,7 @@ Esta estrutura de diretórios facilita a organização do projeto e a localizaç
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 ## 📋 Exemplos
-Nesta seção, serão apresentados exemplos de execução do programa, demonstrando passo a passo como cada proposta de processamento de conjuntos de processos é aplicada e depois vamos analisar os resultados obtidos.
+Veremos alguns exemplos de execução do programa, demonstrando passo a passo como cada proposta de processamento de conjuntos de processos é aplicada e depois vamos analisar os resultados obtidos.
 
 ### 📑 Apresentação do problema
 Assim que iniciamos o programa temos uma explicação do problema: 
@@ -1117,25 +1107,25 @@ No navegador irá aparecer o gráfico plotado para a análise:
     </figure>
 </p>
 
-Na legenda onde mostra as linhas de cada proposta, tem como ocultar algumas linhas para a melhor visualização: 
+Na parte superior direita do gráfico tem uma legenda onde mostra as linhas de cada proposta, tem como ocultar algumas linhas para a melhor visualização: 
 
 <table>
     <tr>
         <td>
-            <p align="center">
-                <figure align="center">
-                    <img src="./images/exemplos/gerandoGrafico3.png" alt="Gerando Gráfico">
-                    <figcaption>Fonte: Autor - Gráfico</figcaption>
-                </figure>
-            </p>
+    <p align="center">
+        <figure align="center">
+            <img src="./images/exemplos/gerandoGrafico3.png" alt="Gerando Gráfico">
+            <figcaption>Fonte: Autor - Gráfico</figcaption>
+        </figure>
+</p>
         </td>
         <td>
-            <p align="center">
-                <figure align="center">
-                    <img src="./images/exemplos/gerandoGrafico4.png" alt="Gerando Gráfico">
-                    <figcaption>Fonte: Autor - Gráfico</figcaption>
-                </figure>
-            </p>
+    <p align="center">
+        <figure align="center">
+            <img src="./images/exemplos/gerandoGrafico4.png" alt="Gerando Gráfico">
+            <figcaption>Fonte: Autor - Gráfico</figcaption>
+        </figure>
+</p>
         </td>
     </tr>
 </table>
@@ -1143,20 +1133,20 @@ Na legenda onde mostra as linhas de cada proposta, tem como ocultar algumas linh
 <table>
     <tr>
         <td>
-            <p align="center">
-                <figure align="center">
-                    <img src="./images/exemplos/gerandoGrafico5.png" alt="Gerando Gráfico">
-                    <figcaption>Fonte: Autor - Gráfico</figcaption>
-                </figure>
-            </p>
+    <p align="center">
+        <figure align="center">
+            <img src="./images/exemplos/gerandoGrafico5.png" alt="Gerando Gráfico">
+            <figcaption>Fonte: Autor - Gráfico</figcaption>
+        </figure>
+</p>
         </td>
         <td>
-            <p align="center">
-                <figure align="center">
-                    <img src="./images/exemplos/gerandoGrafico6.png" alt="Gerando Gráfico">
-                    <figcaption>Fonte: Autor - Gráfico</figcaption>
-                </figure>
-            </p>
+    <p align="center">
+        <figure align="center">
+            <img src="./images/exemplos/gerandoGrafico6.png" alt="Gerando Gráfico">
+            <figcaption>Fonte: Autor - Gráfico</figcaption>
+        </figure>
+</p>
         </td>
     </tr>
 </table>
@@ -1238,125 +1228,125 @@ Foram feitos alguns testes para que possamos ver o comportamento de cada propost
 Vamos fazer com 4 valores diferentes (1, 10, 50, 100).. 
 
 - **Primeiro teste (1):** Primeiro colocamos o valor que nós queremos: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste1.1.png" alt="Teste com todos os valores iguais (1)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste1.1.png" alt="Teste com todos os valores iguais (1)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste1.2.png" alt="Teste com todos os valores iguais (1)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste1.3.png" alt="Teste com todos os valores iguais (1)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste1.2.png" alt="Teste com todos os valores iguais (1)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste1.3.png" alt="Teste com todos os valores iguais (1)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (1)</figcaption>
+    </figure>
+</p>
     
     Vemos que os valores deram muito parecido pois, como todos os valores são um, faz com que tudo seja calculados uma vez e isso resulta em em tempos de execução parecidos. 
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Segundo teste (10):** Repetimos o processo navamente, colocamos o valor que nós queremos: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste2.1.png" alt="Teste com todos os valores iguais (10)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste2.1.png" alt="Teste com todos os valores iguais (10)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste2.2.png" alt="Teste com todos os valores iguais (10)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste2.3.png" alt="Teste com todos os valores iguais (10)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste2.2.png" alt="Teste com todos os valores iguais (10)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste2.3.png" alt="Teste com todos os valores iguais (10)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+    </figure>
+</p>
     
     Como os valores das Proposta 3 até a Proprota 6 deram muito próximos, ocultamos os valores das Propostas 1 e 2, para uma melhor visualização das outras propostas. 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste2.4.png" alt="Teste com todos os valores iguais (10)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste2.4.png" alt="Teste com todos os valores iguais (10)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (10)</figcaption>
+    </figure>
+</p>
 
     Aqui já vemos uma grande diferença entre os valores das propostas, principalmente da 1 e a 2 em relação as demais. 
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Terceiro teste (50):** Primeiro colocamos o valor que nós queremos: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste3.1.png" alt="Teste com todos os valores iguais (50)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste3.1.png" alt="Teste com todos os valores iguais (50)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste3.2.png" alt="Teste com todos os valores iguais (50)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste3.3.png" alt="Teste com todos os valores iguais (50)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste3.2.png" alt="Teste com todos os valores iguais (50)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste3.3.png" alt="Teste com todos os valores iguais (50)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+    </figure>
+</p>
     
     Para uma melhor visualização de todas as propostas, ocultamos as Proposta 1 e 2.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste3.4.png" alt="Teste com todos os valores iguais (50)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste3.4.png" alt="Teste com todos os valores iguais (50)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (50)</figcaption>
+    </figure>
+</p>
 
     Observe a grande diferença entre as Proposta 1 e 2 com as demais propostas, depois a diferença entre as Propostas 3 e 4 com as Propostas 5 e 6.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Quarto teste (100):** Primeiro colocamos o valor que nós queremos: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste4.1.png" alt="Teste com todos os valores iguais (100)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste4.1.png" alt="Teste com todos os valores iguais (100)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste4.2.png" alt="Teste com todos os valores iguais (100)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste4.3.png" alt="Teste com todos os valores iguais (100)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste4.2.png" alt="Teste com todos os valores iguais (100)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste4.3.png" alt="Teste com todos os valores iguais (100)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+    </figure>
+</p>
     
     Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste4.4.png" alt="Teste com todos os valores iguais (100)">
-        <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste4.4.png" alt="Teste com todos os valores iguais (100)">
+    <figcaption>Fonte: Autor - Teste com todos os valores iguais (100)</figcaption>
+    </figure>
+</p>
     
     Percebemos que quanto mais aumentamos os valores a diferença de tempo entre as propostas aumenta cada vez mais, principalmente entre as Propostas 1 para as demais, o mesmo com a Proposta 2 com as demais. Podemos visualizar um bom desempenho das proposta 5 e 6, que consegue manter seus valores parecidos mesmo aumentando a quantidade de processos.
 
@@ -1368,102 +1358,102 @@ Aqui vamos fazer com 3 testes:
 
 - **Primeiro teste (50 processos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste5.1.png" alt="Teste com valores de processos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste5.1.png" alt="Teste com valores de processos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste5.2.png" alt="Teste com valores de processos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste5.3.png" alt="Teste com valores de processos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste5.2.png" alt="Teste com valores de processos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste5.3.png" alt="Teste com valores de processos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+    </figure>
+</p>
     
     Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste5.4.png" alt="Teste com valores de processos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste5.4.png" alt="Teste com valores de processos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (50)</figcaption>
+    </figure>
+</p>
     
     Aqui mesmo com um grande aumento da quantidade de processos vemos que se mantém o tempo de execução bem próximo das Propostas 3 a 6.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Segundo teste (100 processos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste6.1.png" alt="Teste com valores de processos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste6.1.png" alt="Teste com valores de processos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste6.2.png" alt="Teste com valores de processos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste6.3.png" alt="Teste com valores de processos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste6.2.png" alt="Teste com valores de processos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste6.3.png" alt="Teste com valores de processos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+    </figure>
+</p>
     
     Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste6.4.png" alt="Teste com valores de processos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste6.4.png" alt="Teste com valores de processos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (100)</figcaption>
+    </figure>
+</p>
     
     Vemos que aqui existe uma pequena distância entre as Propostas 3 e 4 em relação as Propostas 5 e 6, mas mesmo assim elas continuam tendo tempos parecidos. 
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Terceiro teste (1000 processos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste7.1.png" alt="Teste com valores de processos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste7.1.png" alt="Teste com valores de processos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste7.2.png" alt="Teste com valores de processos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste7.3.png" alt="Teste com valores de processos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste7.2.png" alt="Teste com valores de processos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste7.3.png" alt="Teste com valores de processos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+    </figure>
+</p>
     
     Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste7.4.png" alt="Teste com valores de processos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste7.4.png" alt="Teste com valores de processos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de processos maiores (1000)</figcaption>
+    </figure>
+</p>
     
     Mesmo com valores muito maiores que os outros testes os valores continuaram parecidos com os padrões que já tinhamos observado.
 
@@ -1475,102 +1465,102 @@ Aqui vamos fazer com 3 testes:
 
 - **Primeiro teste (50 arquivos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste8.1.png" alt="Teste com valores de arquivos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste8.1.png" alt="Teste com valores de arquivos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste8.2.png" alt="Teste com valores de arquivos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste8.3.png" alt="Teste com valores de arquivos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste8.2.png" alt="Teste com valores de arquivos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste8.3.png" alt="Teste com valores de arquivos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+    </figure>
+</p>
     
-    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste8.4.png" alt="Teste com valores de arquivos maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
-        </figure>
-    </p>
+    Como fizemos das outras vezes, ocultamos as Propostas 1 e2.
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste8.4.png" alt="Teste com valores de arquivos maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (50)</figcaption>
+    </figure>
+</p>
     
     Vemos que continua o mesmo padrão dos outros testes.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Segundo teste (100 arquivos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste9.1.png" alt="Teste com valores de arquivos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste9.1.png" alt="Teste com valores de arquivos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste9.2.png" alt="Teste com valores de arquivos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste9.3.png" alt="Teste com valores de arquivos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste9.2.png" alt="Teste com valores de arquivos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste9.3.png" alt="Teste com valores de arquivos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+    </figure>
+</p>
     
-    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste9.4.png" alt="Teste com valores de arquivos maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
-        </figure>
-    </p>
+    Novamente ocultando as Propostas 1 e 2.
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste9.4.png" alt="Teste com valores de arquivos maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (100)</figcaption>
+    </figure>
+</p>
     
     Neste vemos algo interressante, nos demais teste a Proposta 6 vem se destacando por sua boa performace, porém aqui isso mudou um pouco.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p> 
 
 - **Terceiro teste (1000 arquivos, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste10.1.png" alt="Teste com valores de arquivos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste10.1.png" alt="Teste com valores de arquivos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste10.2.png" alt="Teste com valores de arquivos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste10.3.png" alt="Teste com valores de arquivos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste10.2.png" alt="Teste com valores de arquivos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste10.3.png" alt="Teste com valores de arquivos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+    </figure>
+</p>
     
     Diferentes das outras, aqui tivemos que ocultar a Proposta 6, para visualizar melhor as outras. 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste10.4.png" alt="Teste com valores de arquivos maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste10.4.png" alt="Teste com valores de arquivos maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos maiores (1000)</figcaption>
+    </figure>
+</p>
     
     Observamos que tivemos um cenário diferente, dos outros testes. 
 
@@ -1582,110 +1572,110 @@ Aqui vamos fazer com 3 testes:
 
 - **Primeiro teste (50 linhas, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste11.1.png" alt="Teste com valores de linhas maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste11.1.png" alt="Teste com valores de linhas maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste11.2.png" alt="Teste com valores de linhas maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste11.3.png" alt="Teste com valores de linhas maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste11.2.png" alt="Teste com valores de linhas maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste11.3.png" alt="Teste com valores de linhas maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+    </figure>
+</p>
     
-    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste11.4.png" alt="Teste com valores de linhas maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
-        </figure>
-    </p>
+    Repetindo o processo de ocultar algumas proposta para visualizarmos melhor.
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste11.4.png" alt="Teste com valores de linhas maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (50)</figcaption>
+    </figure>
+</p>
     
     Aqui o desempenho da Proposta 1 se mostra pior do que os outros testes.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Segundo teste (100 linhas, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste12.1.png" alt="Teste com valores de linhas maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste12.1.png" alt="Teste com valores de linhas maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste12.2.png" alt="Teste com valores de linhas maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste12.3.png" alt="Teste com valores de linhas maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste12.2.png" alt="Teste com valores de linhas maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste12.3.png" alt="Teste com valores de linhas maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+    </figure>
+</p>
     
-    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste12.4.png" alt="Teste com valores de linhas maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
-        </figure>
-    </p>
+    Ocultamos algumas propostas.
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste12.4.png" alt="Teste com valores de linhas maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (100)</figcaption>
+    </figure>
+</p>
     
     Aqui a Proposta 1 piora ainda mais.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Terceiro teste (1000 linhas, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste13.1.png" alt="Teste com valores de linhas maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste13.1.png" alt="Teste com valores de linhas maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste13.2.png" alt="Teste com valores de linhas maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste13.3.png" alt="Teste com valores de linhas maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste13.2.png" alt="Teste com valores de linhas maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste13.3.png" alt="Teste com valores de linhas maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+    </figure>
+</p>
     
     Neste vamos ocultar primeiro somente a Proposta 1.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste13.4.png" alt="Teste com valores de linhas maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste13.4.png" alt="Teste com valores de linhas maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+    </figure>
+</p>
 
     Agora ocultando a Proposta 2 também.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste13.5.png" alt="Teste com valores de linhas maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste13.5.png" alt="Teste com valores de linhas maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de linhas maiores (1000)</figcaption>
+    </figure>
+</p>
     
     Mesmo com a piora na performace da Proposta 1, ainda sim a Proposta 5 e 6 se mostram mais eficientes e com um desempenho melhor a cada vez que aumentamos os valores. 
 
@@ -1698,67 +1688,67 @@ Aqui vamos fazer com 3 testes:
 
 - **Primeiro teste (50 arquivos por linha, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste14.1.png" alt="Teste com valores de arquivos por linha maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste14.1.png" alt="Teste com valores de arquivos por linha maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+    </figure>
+</p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste14.2.png" alt="Teste com valores de arquivos por linha maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
-        </figure>
-    </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste14.3.png" alt="Teste com valores de arquivos por linha maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
-        </figure>
-    </p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste14.2.png" alt="Teste com valores de arquivos por linha maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+    </figure>
+</p>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste14.3.png" alt="Teste com valores de arquivos por linha maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+    </figure>
+</p>
     
-    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste14.4.png" alt="Teste com valores de arquivos por linha maiores (50)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
-        </figure>
-    </p>
+    Aqui vamos ocultar as Propostas 1 e 2.
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste14.4.png" alt="Teste com valores de arquivos por linha maiores (50)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (50)</figcaption>
+    </figure>
+</p>
     
     Como no teste anterior, a Proposta 1 tem um desempenho pior.
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 - **Segundo teste (100 arquivos por linha, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste15.1.png" alt="Teste com valores de arquivos por linha maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste15.1.png" alt="Teste com valores de arquivos por linha maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+    </figure>
     </p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste15.2.png" alt="Teste com valores de arquivos por linha maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste15.2.png" alt="Teste com valores de arquivos por linha maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+    </figure>
     </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste15.3.png" alt="Teste com valores de arquivos por linha maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste15.3.png" alt="Teste com valores de arquivos por linha maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+    </figure>
     </p>
     
-    Ocultamos as Proposta 1 e 2, para uma melhor visualização de todas as propostas.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste15.4.png" alt="Teste com valores de arquivos por linha maiores (100)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
-        </figure>
+   Para uma visualizar melhortodas as propostas, ocultamos algumas.
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste15.4.png" alt="Teste com valores de arquivos por linha maiores (100)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (100)</figcaption>
+    </figure>
     </p>
     
     Vemos ainda mais a piora da Proposta 1.
@@ -1766,41 +1756,41 @@ Aqui vamos fazer com 3 testes:
 
 - **Terceiro teste (1000 arquivos por linha, valor igual a 10 para as outras entradas):** Inserindo valores de entrada: 
 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste16.1.png" alt="Teste com valores de arquivos por linha maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste16.1.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+    </figure>
     </p>
 
     Depois, é executado os cálculos e plotado o gráfico: 
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste16.2.png" alt="Teste com valores de arquivos por linha maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste16.2.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+    </figure>
     </p>
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste16.3.png" alt="Teste com valores de arquivos por linha maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste16.3.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+    </figure>
     </p>
     
     Neste vamos ocultar primeiro somente a Proposta 1.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste16.4.png" alt="Teste com valores de arquivos por linha maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste16.4.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+    </figure>
     </p>
 
     Agora ocultando a Proposta 2 também.
-    <p align="center">
-        <figure align="center">
-        <img src="./images/testes/teste16.5.png" alt="Teste com valores de arquivos por linha maiores (1000)">
-        <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
-        </figure>
+<p align="center">
+    <figure align="center">
+    <img src="./images/testes/teste16.5.png" alt="Teste com valores de arquivos por linha maiores (1000)">
+    <figcaption>Fonte: Autor - Teste com valores de arquivos por linha maiores (1000)</figcaption>
+    </figure>
     </p>
     
     Com o aumento da quantidade de arquivos por linha, faz com que a Proposta 1 piore ainda mais.
@@ -1858,7 +1848,7 @@ Portanto, a escolha da Proposta 6 como a solução final para parar de procurar 
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 ## 🎉 Conclusão 
-A experiência de realizar este trabalho foi enriquecedora e desafiadora, proporcionando uma compreensão aprofundada das diferentes estratégias para otimizar a eficiência de cálculos de somas. Ao avaliar diversas propostas, foi possível observar como diferentes abordagens afetam o desempenho e a complexidade computacional. O trabalho nos proporcionou uma compreensão profunda das complexidades envolvidas na manipulação eficiente de dados, especialmente quando se trata de cálculos repetitivos e do gerenciamento de caches. Cada proposta trouxe desafios e aprendizados distintos, permitindo-nos experimentar com diferentes abordagens e analisar suas implicações teóricas e práticas.
+A experiência de realizar este trabalho foi enriquecedora e desafiadora, proporcionando uma compreensão aprofundada das diferentes estratégias para otimizar a eficiência de cálculos de somas. Ao avaliar diversas propostas, foi possível observar como diferentes abordagens afetam o desempenho e a complexidade computacional. O trabalho proporcionou o entendimento das complexidades envolvidas na manipulação eficiente de dados, especialmente quando se trata de cálculos repetitivos e do gerenciamento de caches. Cada proposta trouxe desafios e aprendizados distintos, permitindo-nos experimentar com diferentes abordagens e analisar suas implicações teóricas e práticas.
 
 Os testes realizados foram cruciais para entender o desempenho real de cada proposta. Testamos vários cenários, desde entradas pequenas e simples até configurações mais complexas com grandes volumes de dados. Esses testes demonstraram claramente como a escolha da estratégia de cache e processamento pode afetar drasticamente o tempo de execução e a eficiência geral do sistema. A análise detalhada dos tempos de execução forneceu percepções valiosas sobre os pontos fortes e fracos de cada abordagem, destacando a importância de considerar a distribuição e os padrões de acesso dos dados ao escolher uma solução.
 
