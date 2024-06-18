@@ -1900,31 +1900,36 @@ Ficarei feliz em receber feedbacks, contribuições ou responder a quaisquer dú
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
 
 ## 🔖 Referências
-1. CEFET-MG. **Aula 1 - Análise de Algoritmos**. Disponível em: [https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf](https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf). Acesso em:  10 jun. 2024.
+1. **Questões do Professor**. Disponível em: [https://drive.google.com/file/d/1P63UUEQO95ghmgbR-_TZcVQu8x4eI3Dp/view](https://drive.google.com/file/d/1P63UUEQO95ghmgbR-_TZcVQu8x4eI3Dp/view). Acesso em: 18 jun. 2024.
 
-2. Arora, S., Barak, B. **Computational Complexity: A Modern Approach**. Disponível em: [https://theory.cs.princeton.edu/complexity/book.pdf](https://theory.cs.princeton.edu/complexity/book.pdf). Acesso em:  10 jun. 2024.
+2. **Respostas das Outras Questões**. Disponível em: [https://drive.google.com/file/d/1aPzZ1Fc75ettn7cBjwWLHkmntjseRob_/view?usp=drive_link](https://drive.google.com/file/d/1aPzZ1Fc75ettn7cBjwWLHkmntjseRob_/view?usp=drive_link). Acesso em: 18 jun. 2024.
 
-3. Krupansky, J. **What is Algorithmic Complexity (or Computational Complexity) and Big-O Notation?**. Disponível em: [https://jackkrupansky.medium.com/what-is-algorithmic-complexity-or-computational-complexity-and-big-o-notation-9c1e5eb6ad48](https://jackkrupansky.medium.com/what-is-algorithmic-complexity-or-computational-complexity-and-big-o-notation-9c1e5eb6ad48). Acesso em:  10 jun. 2024.
+3. CEFET-MG. **Aula 1 - Análise de Algoritmos**. Disponível em: [https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf](https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf). Acesso em: 18 jun. 2024.
 
-4. **Computational Complexity**. Stanford Encyclopedia of Philosophy. Disponível em: [https://plato.stanford.edu/entries/computational-complexity/](https://plato.stanford.edu/entries/computational-complexity/). Acesso em:  10 jun. 2024.
+4. Arora, S., Barak, B. **Computational Complexity: A Modern Approach**. Disponível em: [https://theory.cs.princeton.edu/complexity/book.pdf](https://theory.cs.princeton.edu/complexity/book.pdf). Acesso em: 18 jun. 2024.
 
-5. **Computational Complexity Theory**. Wikipedia. Disponível em: [https://en.wikipedia.org/wiki/Computational_complexity_theory](https://en.wikipedia.org/wiki/Computational_complexity_theory). Acesso em:  10 jun. 2024.
+5. Krupansky, J. **What is Algorithmic Complexity (or Computational Complexity) and Big-O Notation?**. Disponível em: [https://jackkrupansky.medium.com/what-is-algorithmic-complexity-or-computational-complexity-and-big-o-notation-9c1e5eb6ad48](https://jackkrupansky.medium.com/what-is-algorithmic-complexity-or-computational-complexity-and-big-o-notation-9c1e5eb6ad48). Acesso em: 18 jun. 2024.
 
-6. **Análise de Complexidade de Algoritmos**. Iugu Blog. Disponível em: [https://www.iugu.com/blog/analise-complexidade-algoritmos](https://www.iugu.com/blog/analise-complexidade-algoritmos). Acesso em:  10 jun. 2024.
+6. **Computational Complexity**. Stanford Encyclopedia of Philosophy. Disponível em: [https://plato.stanford.edu/entries/computational-complexity/](https://plato.stanford.edu/entries/computational-complexity/). Acesso em: 18 jun. 2024.
 
-7. Cormen, T. H., et al. **Algoritmos: Teoria e Prática, 3ª Edição**. Disponível em: [https://computerscience360.wordpress.com/wp-content/uploads/2018/02/algoritmos-teoria-e-prc3a1tica-3ed-thomas-cormen.pdf](https://computerscience360.wordpress.com/wp-content/uploads/2018/02/algoritmos-teoria-e-prc3a1tica-3ed-thomas-cormen.pdf). Acesso em:  10 jun. 2024.
+7. **Computational Complexity Theory**. Wikipedia. Disponível em: [https://en.wikipedia.org/wiki/Computational_complexity_theory](https://en.wikipedia.org/wiki/Computational_complexity_theory). Acesso em: 18 jun. 2024.
 
-8. Bhargava, A. Y. **Entendendo Algoritmos: Um Guia Ilustrado Para Programadores e Outros Curiosos**. Disponível em: [https://github.com/KAYOKG/BibliotecaDev/blob/main/LivrosDev/Entendendo%20Algoritmos%20-%20Um%20Guia%20Ilustrado%20Para%20Programadores%20e%20Outros%20Curiosos%20-%20Autor%20(Aditya%20Y.%20Bhargava).pdf](https://github.com/KAYOKG/BibliotecaDev/blob/main/LivrosDev/Entendendo%20Algoritmos%20-%20Um%20Guia%20Ilustrado%20Para%20Programadores%20e%20Outros%20Curiosos%20-%20Autor%20(Aditya%20Y.%20Bhargava).pdf). Acesso em:  10 jun. 2024.
+8. **Análise de Complexidade de Algoritmos**. Iugu Blog. Disponível em: [https://www.iugu.com/blog/analise-complexidade-algoritmos](https://www.iugu.com/blog/analise-complexidade-algoritmos). Acesso em: 18 jun. 2024.
 
-9. Knuth, D. E. **The Art of Computer Programming, Vol. 1: Fundamental Algorithms, 3rd Edition**. Disponível em: [https://www.haio.ir/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf](https://www.haio.ir/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf). Acesso em:  10 jun. 2024.
+9. Cormen, T. H., et al. **Algoritmos: Teoria e Prática, 3ª Edição**. Disponível em: [https://computerscience360.wordpress.com/wp-content/uploads/2018/02/algoritmos-teoria-e-prc3a1tica-3ed-thomas-cormen.pdf](https://computerscience360.wordpress.com/wp-content/uploads/2018/02/algoritmos-teoria-e-prc3a1tica-3ed-thomas-cormen.pdf). Acesso em: 18 jun. 2024.
 
-10. João Arthur. **Análise Assintótica**. Disponível em: [https://joaoarthurbm.github.io/eda/posts/analise-assintotica/](https://joaoarthurbm.github.io/eda/posts/analise-assintotica/). Acesso em:  10 jun. 2024.
+10. Bhargava, A. Y. **Entendendo Algoritmos: Um Guia Ilustrado Para Programadores e Outros Curiosos**. Disponível em: [https://github.com/KAYOKG/BibliotecaDev/blob/main/LivrosDev/Entendendo%20Algoritmos%20-%20Um%20Guia%20Ilustrado%20Para%20Programadores%20e%20Outros%20Curiosos%20-%20Autor%20(Aditya%20Y.%20Bhargava).pdf](https://github.com/KAYOKG/BibliotecaDev/blob/main/LivrosDev/Entendendo%20Algoritmos%20-%20Um%20Guia%20Ilustrado%20Para%20Programadores%20e%20Outros%20Curiosos%20-%20Autor%20(Aditya%20Y.%20Bhargava).pdf). Acesso em: 18 jun. 2024.
 
-11. Pereira, F. **Análise de Algoritmos**. Disponível em: [https://www.ime.usp.br/~pf/analise_de_algoritmos/](https://www.ime.usp.br/~pf/analise_de_algoritmos/). Acesso em:  10 jun. 2024.
+11. Knuth, D. E. **The Art of Computer Programming, Vol. 1: Fundamental Algorithms, 3rd Edition**. Disponível em: [https://www.haio.ir/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf](https://www.haio.ir/app/uploads/2022/01/The-Art-of-Computer-Programming-Vol.-1-Fundamental-Algorithms-3rd-Edition-by-Donald-E.-Knuth-z-lib.org_.pdf). Acesso em: 18 jun. 2024.
 
-12. XVI ENID. **PROLICEN: Engenharia de Software: análise de complexidade assintótica de algoritmos**. Disponível em: [http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf](http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf). Acesso em:  10 jun. 2024.
+12. João Arthur. **Análise Assintótica**. Disponível em: [https://joaoarthurbm.github.io/eda/posts/analise-assintotica/](https://joaoarthurbm.github.io/eda/posts/analise-assintotica/). Acesso em: 18 jun. 2024.
 
-13. Hokama. **CIC110 - Estrutura de Dados - Análise Assintótica**. Disponível em: [https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf](https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf). Acesso em:  10 jun. 2024.
+13. Pereira, F. **Análise de Algoritmos**. Disponível em: [https://www.ime.usp.br/~pf/analise_de_algoritmos/](https://www.ime.usp.br/~pf/analise_de_algoritmos/). Acesso em: 18 jun. 2024.
 
-14. Martins, A. **Análise de Complexidade de Algoritmos**. Disponível em: [http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf](http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf). Acesso em:  10 jun. 2024.
+14. XVI ENID. **PROLICEN: Engenharia de Software: análise de complexidade assintótica de algoritmos**. Disponível em: [http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf](http://www.prac.ufpb.br/enex/XVENID/PROLICEN/CCAE/25.pdf). Acesso em: 18 jun. 2024.
+
+15. Hokama. **CIC110 - Estrutura de Dados - Análise Assintótica**. Disponível em: [https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf](https://hokama.com.br/disciplinas/cic110_2019s2/02-analise-assintotica.pdf). Acesso em: 18 jun. 2024.
+
+16. Martins, A. **Análise de Complexidade de Algoritmos**. Disponível em: [http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf](http://www.deinf.ufma.br/~acmo/grad/ED_complexidade_2005.pdf). Acesso em: 18 jun. 2024.
+
 <p align="right"><a href="#-tópicos">⬆️ Voltar para o Sumário</a></p>
